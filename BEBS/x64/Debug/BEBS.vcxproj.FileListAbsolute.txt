@@ -1,0 +1,17 @@
+C:\Users\MY PC\OneDrive\שולחן העבודה\mmm\BEBS\BEBS\x64\Debug\BEBS.vcxprojAssemblyReference.cache
+C:\Users\MY PC\OneDrive\שולחן העבודה\mmm\BEBS\BEBS\x64\Debug\BEBS.vcxproj.CopyComplete
+C:\Users\MY PC\OneDrive\שולחן העבודה\mmm\BEBS\BEBS\x64\Debug\BEBS.HomePage.resources
+C:\Users\MY PC\OneDrive\שולחן העבודה\mmm\BEBS\BEBS\x64\Debug\BEBS.vcxproj.GenerateResource.cache
+C:\Users\MY PC\OneDrive\שולחן העבודה\mmm\BEBS\BEBS\x64\Debug\BEBS.LogInMenu.resources
+C:\Users\MY PC\OneDrive\שולחן העבודה\mmm\BEBS\BEBS\x64\Debug\BEBS.RegisterMenu.resources
+C:\Users\MY PC\OneDrive\שולחן העבודה\mmm\BEBS\BEBS\x64\Debug\BEBS.ShoppingMenu.resources
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.vcxprojAssemblyReference.cache
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.HomePage.resources
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.LogInMenu.resources
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.RegisterMenu.resources
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.ShoppingMenu.resources
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.vcxproj.GenerateResource.cache
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.vcxproj.CopyComplete
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.AdminMenu.resources
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.UsersControl.resources
+C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.SalesControl.resources
