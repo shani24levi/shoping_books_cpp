@@ -517,6 +517,8 @@ private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 }
 private: System::Void HomePage_Click(System::Object^ sender, System::EventArgs^ e) {
+	/*this->~UsersControl();	BEBS::AdminMenu logIn;	logIn.ShowDialog();
+	*/
 	/*this->Hide();
 	BEBS::AdminMenu renderPage;
 	renderPage.ShowDialog();

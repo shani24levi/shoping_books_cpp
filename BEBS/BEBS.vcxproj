@@ -196,11 +196,20 @@
     <EmbeddedResource Include="AdminMenu.resx">
       <DependentUpon>AdminMenu.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DiscountControl.resx">
+      <DependentUpon>DiscountControl.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInMenu.resx">
       <DependentUpon>LogInMenu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdersControl.resx">
+      <DependentUpon>OrdersControl.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitControl.resx">
+      <DependentUpon>ProfitControl.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterMenu.resx">
       <DependentUpon>RegisterMenu.h</DependentUpon>

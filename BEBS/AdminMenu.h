@@ -79,6 +79,7 @@ namespace BEBS {
 
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ Delete;
+	private: System::Windows::Forms::Label^ label5;
 
 
 
@@ -130,6 +131,7 @@ namespace BEBS {
 			this->date_txt = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->Delete = (gcnew System::Windows::Forms::Button());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->img))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -156,6 +158,7 @@ namespace BEBS {
 			// book_id
 			// 
 			this->book_id->AutoSize = true;
+			this->book_id->BackColor = System::Drawing::Color::Transparent;
 			this->book_id->Location = System::Drawing::Point(28, 78);
 			this->book_id->Name = L"book_id";
 			this->book_id->Size = System::Drawing::Size(77, 25);
@@ -166,6 +169,7 @@ namespace BEBS {
 			// title
 			// 
 			this->title->AutoSize = true;
+			this->title->BackColor = System::Drawing::Color::Transparent;
 			this->title->Location = System::Drawing::Point(28, 317);
 			this->title->Name = L"title";
 			this->title->Size = System::Drawing::Size(49, 25);
@@ -176,6 +180,7 @@ namespace BEBS {
 			// Price
 			// 
 			this->Price->AutoSize = true;
+			this->Price->BackColor = System::Drawing::Color::Transparent;
 			this->Price->Location = System::Drawing::Point(28, 156);
 			this->Price->Name = L"Price";
 			this->Price->Size = System::Drawing::Size(56, 25);
@@ -185,6 +190,7 @@ namespace BEBS {
 			// Section
 			// 
 			this->Section->AutoSize = true;
+			this->Section->BackColor = System::Drawing::Color::Transparent;
 			this->Section->Location = System::Drawing::Point(240, 78);
 			this->Section->Name = L"Section";
 			this->Section->Size = System::Drawing::Size(78, 25);
@@ -194,6 +200,7 @@ namespace BEBS {
 			// Amount
 			// 
 			this->Amount->AutoSize = true;
+			this->Amount->BackColor = System::Drawing::Color::Transparent;
 			this->Amount->Location = System::Drawing::Point(28, 235);
 			this->Amount->Name = L"Amount";
 			this->Amount->Size = System::Drawing::Size(80, 25);
@@ -203,6 +210,7 @@ namespace BEBS {
 			// Info
 			// 
 			this->Info->AutoSize = true;
+			this->Info->BackColor = System::Drawing::Color::Transparent;
 			this->Info->Location = System::Drawing::Point(240, 156);
 			this->Info->Name = L"Info";
 			this->Info->Size = System::Drawing::Size(44, 25);
@@ -280,6 +288,7 @@ namespace BEBS {
 			this->Profit->TabIndex = 15;
 			this->Profit->Text = L"Profit";
 			this->Profit->UseVisualStyleBackColor = false;
+			this->Profit->Click += gcnew System::EventHandler(this, &AdminMenu::Profit_Click);
 			// 
 			// Sales
 			// 
@@ -315,6 +324,7 @@ namespace BEBS {
 			this->Orders->TabIndex = 18;
 			this->Orders->Text = L"Orders";
 			this->Orders->UseVisualStyleBackColor = false;
+			this->Orders->Click += gcnew System::EventHandler(this, &AdminMenu::Orders_Click);
 			// 
 			// label1
 			// 
@@ -358,6 +368,7 @@ namespace BEBS {
 			this->Discount->TabIndex = 22;
 			this->Discount->Text = L"Discount";
 			this->Discount->UseVisualStyleBackColor = false;
+			this->Discount->Click += gcnew System::EventHandler(this, &AdminMenu::Discount_Click);
 			// 
 			// comboBox1
 			// 
@@ -383,6 +394,7 @@ namespace BEBS {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Location = System::Drawing::Point(37, 397);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(68, 25);
@@ -393,6 +405,7 @@ namespace BEBS {
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Location = System::Drawing::Point(449, 317);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(70, 25);
@@ -434,6 +447,7 @@ namespace BEBS {
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Location = System::Drawing::Point(240, 317);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(53, 25);
@@ -453,13 +467,26 @@ namespace BEBS {
 			this->Delete->UseVisualStyleBackColor = false;
 			this->Delete->Click += gcnew System::EventHandler(this, &AdminMenu::Delete_Click);
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->ForeColor = System::Drawing::Color::Brown;
+			this->label5->Location = System::Drawing::Point(546, 302);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(75, 25);
+			this->label5->TabIndex = 32;
+			this->label5->Text = L"*add // ";
+			// 
 			// AdminMenu
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlText;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1076, 536);
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(1407, 670);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->Delete);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->date_txt);
@@ -493,6 +520,7 @@ namespace BEBS {
 			this->Controls->Add(this->listBox);
 			this->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->Name = L"AdminMenu";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"AdminMenu";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->img))->EndInit();
 			this->ResumeLayout(false);
@@ -716,6 +744,21 @@ private: System::Void Sales_Click(System::Object^ sender, System::EventArgs^ e) 
 	this->Hide();
 	BEBS::SalesControl sales;
 	sales.ShowDialog();
+}
+private: System::Void Profit_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	BEBS::ProfitControl nextPag;
+	nextPag.ShowDialog();
+}
+private: System::Void Orders_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	BEBS::OrdersControl nextPag;
+	nextPag.ShowDialog();
+}
+private: System::Void Discount_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	BEBS::DiscountControl nextPag;
+	nextPag.ShowDialog();
 }
 };
 }

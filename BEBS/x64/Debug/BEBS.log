@@ -10,8 +10,11 @@ C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\Ho
   AdminMenu.cpp
   AssemblyInfo.cpp
   BEBS.cpp
+  DiscountControl.cpp
   HomePage.cpp
   LogInMenu.cpp
+  OrdersControl.cpp
+  ProfitControl.cpp
   RegisterMenu.cpp
   SalesControl.cpp
   ShoppingMenu.cpp

@@ -15,6 +15,9 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
+#include "DiscountControl.h"
+#include "OrdersControl.h"
+#include "ProfitControl.h"
 #include "SalesControl.h"
 #include "UsersControl.h"
 #include "AdminMenu.h"

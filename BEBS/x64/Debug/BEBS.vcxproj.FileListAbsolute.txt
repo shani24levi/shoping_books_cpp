@@ -25,3 +25,6 @@ C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x6
 C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.UsersControl.resources
 C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.vcxproj.GenerateResource.cache
 C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.vcxproj.CopyComplete
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.ProfitControl.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.DiscountControl.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.OrdersControl.resources
