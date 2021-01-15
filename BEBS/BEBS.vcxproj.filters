@@ -47,6 +47,15 @@
     <ClInclude Include="SalesControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ProfitControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OrdersControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiscountControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BEBS.cpp">
@@ -77,6 +86,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SalesControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProfitControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OrdersControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DiscountControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

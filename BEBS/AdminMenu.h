@@ -98,6 +98,7 @@ namespace BEBS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdminMenu::typeid));
 			this->listBox = (gcnew System::Windows::Forms::ListBox());
 			this->img = (gcnew System::Windows::Forms::PictureBox());
 			this->book_id = (gcnew System::Windows::Forms::Label());
@@ -134,6 +135,8 @@ namespace BEBS {
 			// 
 			// listBox
 			// 
+			this->listBox->BackColor = System::Drawing::Color::Black;
+			this->listBox->ForeColor = System::Drawing::Color::White;
 			this->listBox->FormattingEnabled = true;
 			this->listBox->ItemHeight = 24;
 			this->listBox->Location = System::Drawing::Point(673, 133);
@@ -208,6 +211,8 @@ namespace BEBS {
 			// 
 			// id_txt
 			// 
+			this->id_txt->BackColor = System::Drawing::Color::Black;
+			this->id_txt->ForeColor = System::Drawing::Color::White;
 			this->id_txt->Location = System::Drawing::Point(33, 106);
 			this->id_txt->Multiline = true;
 			this->id_txt->Name = L"id_txt";
@@ -217,6 +222,8 @@ namespace BEBS {
 			// 
 			// price_txt
 			// 
+			this->price_txt->BackColor = System::Drawing::Color::Black;
+			this->price_txt->ForeColor = System::Drawing::Color::White;
 			this->price_txt->Location = System::Drawing::Point(33, 184);
 			this->price_txt->Multiline = true;
 			this->price_txt->Name = L"price_txt";
@@ -225,6 +232,8 @@ namespace BEBS {
 			// 
 			// sec_txt
 			// 
+			this->sec_txt->BackColor = System::Drawing::Color::Black;
+			this->sec_txt->ForeColor = System::Drawing::Color::White;
 			this->sec_txt->Location = System::Drawing::Point(245, 106);
 			this->sec_txt->Multiline = true;
 			this->sec_txt->Name = L"sec_txt";
@@ -233,6 +242,8 @@ namespace BEBS {
 			// 
 			// amount_txt
 			// 
+			this->amount_txt->BackColor = System::Drawing::Color::Black;
+			this->amount_txt->ForeColor = System::Drawing::Color::White;
 			this->amount_txt->Location = System::Drawing::Point(33, 265);
 			this->amount_txt->Multiline = true;
 			this->amount_txt->Name = L"amount_txt";
@@ -241,6 +252,8 @@ namespace BEBS {
 			// 
 			// info_txt
 			// 
+			this->info_txt->BackColor = System::Drawing::Color::Black;
+			this->info_txt->ForeColor = System::Drawing::Color::White;
 			this->info_txt->Location = System::Drawing::Point(245, 184);
 			this->info_txt->Multiline = true;
 			this->info_txt->Name = L"info_txt";
@@ -249,6 +262,8 @@ namespace BEBS {
 			// 
 			// title_txt
 			// 
+			this->title_txt->BackColor = System::Drawing::Color::Black;
+			this->title_txt->ForeColor = System::Drawing::Color::White;
 			this->title_txt->Location = System::Drawing::Point(33, 345);
 			this->title_txt->Multiline = true;
 			this->title_txt->Name = L"title_txt";
@@ -261,7 +276,7 @@ namespace BEBS {
 			this->Profit->ForeColor = System::Drawing::SystemColors::HighlightText;
 			this->Profit->Location = System::Drawing::Point(920, 12);
 			this->Profit->Name = L"Profit";
-			this->Profit->Size = System::Drawing::Size(83, 40);
+			this->Profit->Size = System::Drawing::Size(83, 50);
 			this->Profit->TabIndex = 15;
 			this->Profit->Text = L"Profit";
 			this->Profit->UseVisualStyleBackColor = false;
@@ -272,7 +287,7 @@ namespace BEBS {
 			this->Sales->ForeColor = System::Drawing::SystemColors::HighlightText;
 			this->Sales->Location = System::Drawing::Point(839, 12);
 			this->Sales->Name = L"Sales";
-			this->Sales->Size = System::Drawing::Size(75, 40);
+			this->Sales->Size = System::Drawing::Size(75, 50);
 			this->Sales->TabIndex = 16;
 			this->Sales->Text = L"Sales";
 			this->Sales->UseVisualStyleBackColor = false;
@@ -284,7 +299,7 @@ namespace BEBS {
 			this->Users->ForeColor = System::Drawing::SystemColors::HighlightText;
 			this->Users->Location = System::Drawing::Point(758, 12);
 			this->Users->Name = L"Users";
-			this->Users->Size = System::Drawing::Size(75, 40);
+			this->Users->Size = System::Drawing::Size(75, 50);
 			this->Users->TabIndex = 17;
 			this->Users->Text = L"Users";
 			this->Users->UseVisualStyleBackColor = false;
@@ -296,7 +311,7 @@ namespace BEBS {
 			this->Orders->ForeColor = System::Drawing::SystemColors::HighlightText;
 			this->Orders->Location = System::Drawing::Point(653, 12);
 			this->Orders->Name = L"Orders";
-			this->Orders->Size = System::Drawing::Size(96, 40);
+			this->Orders->Size = System::Drawing::Size(96, 50);
 			this->Orders->TabIndex = 18;
 			this->Orders->Text = L"Orders";
 			this->Orders->UseVisualStyleBackColor = false;
@@ -313,22 +328,24 @@ namespace BEBS {
 			// 
 			// SAVE
 			// 
-			this->SAVE->Location = System::Drawing::Point(33, 473);
+			this->SAVE->BackColor = System::Drawing::Color::Chartreuse;
+			this->SAVE->Location = System::Drawing::Point(33, 466);
 			this->SAVE->Name = L"SAVE";
-			this->SAVE->Size = System::Drawing::Size(162, 43);
+			this->SAVE->Size = System::Drawing::Size(162, 50);
 			this->SAVE->TabIndex = 20;
 			this->SAVE->Text = L"SAVE";
-			this->SAVE->UseVisualStyleBackColor = true;
+			this->SAVE->UseVisualStyleBackColor = false;
 			this->SAVE->Click += gcnew System::EventHandler(this, &AdminMenu::button1_Click_1);
 			// 
 			// Update
 			// 
-			this->Update->Location = System::Drawing::Point(234, 473);
+			this->Update->BackColor = System::Drawing::Color::Gold;
+			this->Update->Location = System::Drawing::Point(234, 466);
 			this->Update->Name = L"Update";
-			this->Update->Size = System::Drawing::Size(162, 43);
+			this->Update->Size = System::Drawing::Size(162, 50);
 			this->Update->TabIndex = 21;
 			this->Update->Text = L"Update";
-			this->Update->UseVisualStyleBackColor = true;
+			this->Update->UseVisualStyleBackColor = false;
 			this->Update->Click += gcnew System::EventHandler(this, &AdminMenu::Update_Click);
 			// 
 			// Discount
@@ -337,13 +354,15 @@ namespace BEBS {
 			this->Discount->ForeColor = System::Drawing::SystemColors::HighlightText;
 			this->Discount->Location = System::Drawing::Point(551, 12);
 			this->Discount->Name = L"Discount";
-			this->Discount->Size = System::Drawing::Size(96, 40);
+			this->Discount->Size = System::Drawing::Size(96, 50);
 			this->Discount->TabIndex = 22;
 			this->Discount->Text = L"Discount";
 			this->Discount->UseVisualStyleBackColor = false;
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->BackColor = System::Drawing::Color::Black;
+			this->comboBox1->ForeColor = System::Drawing::Color::White;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(673, 95);
 			this->comboBox1->Name = L"comboBox1";
@@ -353,6 +372,8 @@ namespace BEBS {
 			// 
 			// pag_txt
 			// 
+			this->pag_txt->BackColor = System::Drawing::Color::Black;
+			this->pag_txt->ForeColor = System::Drawing::Color::White;
 			this->pag_txt->Location = System::Drawing::Point(33, 425);
 			this->pag_txt->Multiline = true;
 			this->pag_txt->Name = L"pag_txt";
@@ -381,6 +402,8 @@ namespace BEBS {
 			// 
 			// author_txt
 			// 
+			this->author_txt->BackColor = System::Drawing::Color::Black;
+			this->author_txt->ForeColor = System::Drawing::Color::White;
 			this->author_txt->Location = System::Drawing::Point(454, 345);
 			this->author_txt->Multiline = true;
 			this->author_txt->Name = L"author_txt";
@@ -390,6 +413,8 @@ namespace BEBS {
 			// 
 			// img_txt
 			// 
+			this->img_txt->BackColor = System::Drawing::Color::Black;
+			this->img_txt->ForeColor = System::Drawing::Color::White;
 			this->img_txt->Location = System::Drawing::Point(454, 265);
 			this->img_txt->Multiline = true;
 			this->img_txt->Name = L"img_txt";
@@ -398,6 +423,8 @@ namespace BEBS {
 			// 
 			// date_txt
 			// 
+			this->date_txt->BackColor = System::Drawing::Color::Black;
+			this->date_txt->ForeColor = System::Drawing::Color::White;
 			this->date_txt->Location = System::Drawing::Point(245, 345);
 			this->date_txt->Multiline = true;
 			this->date_txt->Name = L"date_txt";
@@ -416,19 +443,23 @@ namespace BEBS {
 			// 
 			// Delete
 			// 
-			this->Delete->Location = System::Drawing::Point(432, 473);
+			this->Delete->BackColor = System::Drawing::Color::Red;
+			this->Delete->ForeColor = System::Drawing::Color::White;
+			this->Delete->Location = System::Drawing::Point(432, 466);
 			this->Delete->Name = L"Delete";
-			this->Delete->Size = System::Drawing::Size(162, 43);
+			this->Delete->Size = System::Drawing::Size(162, 50);
 			this->Delete->TabIndex = 31;
 			this->Delete->Text = L"Delete";
-			this->Delete->UseVisualStyleBackColor = true;
+			this->Delete->UseVisualStyleBackColor = false;
 			this->Delete->Click += gcnew System::EventHandler(this, &AdminMenu::Delete_Click);
 			// 
 			// AdminMenu
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1028, 528);
+			this->BackColor = System::Drawing::SystemColors::ControlText;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(1076, 536);
 			this->Controls->Add(this->Delete);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->date_txt);
@@ -460,6 +491,7 @@ namespace BEBS {
 			this->Controls->Add(this->book_id);
 			this->Controls->Add(this->img);
 			this->Controls->Add(this->listBox);
+			this->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->Name = L"AdminMenu";
 			this->Text = L"AdminMenu";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->img))->EndInit();
@@ -479,10 +511,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	BEBS::UsersControl users;
 	users.ShowDialog();
 }
+
+	   //image text -> add / / image//books//
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
 	MySqlConnection^ conData = gcnew MySqlConnection(con);
-	MySqlCommand^ cmdDB = gcnew MySqlCommand("INSERT INTO `book_store`.`books`(`book_id`,`title`,`pages` ,`section`,`price`,`amount`,`publish_date`,`info`,`img`,`author`) VALUES('"+id_txt->Text+"','"+title_txt->Text +"','"+pag_txt->Text +"','"+sec_txt->Text +"', '"+price_txt->Text +"' ,'"+amount_txt->Text +"', '"+date_txt->Text +"','"+info_txt->Text +"','"+img_txt->Text +"','" + author_txt->Text + "');", conData);
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("INSERT INTO `book_store`.`books`(`book_id`,`title`,`pages` ,`section`,`price`,`amount`,`info`,`img`,`author`) VALUES('"+id_txt->Text+"','"+title_txt->Text +"','"+pag_txt->Text +"','"+sec_txt->Text +"', '"+price_txt->Text +"' ,'"+amount_txt->Text +"','"+info_txt->Text +"','"+img_txt->Text +"','" + author_txt->Text + "');", conData);
 	MySqlDataReader^ myRender;
 
 	try {
@@ -492,6 +526,9 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 		while(myRender->Read()) {
 	
 		}
+		this->Hide();
+		BEBS::AdminMenu renderPage;
+		renderPage.ShowDialog();
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
@@ -520,6 +557,9 @@ private: System::Void listBox_SelectedIndexChanged(System::Object^ sender, Syste
 			String^ vinfo = myRender->GetString("info");
 			String^ vimg = myRender->GetString("img");
 			String^ vauthor = myRender->GetString("author");
+			//this->img->BackgroundImage = Image::FromFile("Image\\cpp1.jpg");
+			this->img->BackgroundImage = Image::FromFile(vimg);
+
 
 			//set vals to text box
 			id_txt->Text = vId;
@@ -643,6 +683,9 @@ private: System::Void Update_Click(System::Object^ sender, System::EventArgs^ e)
 		while (myRender->Read()) {
 
 		}
+		this->Hide();
+		BEBS::AdminMenu renderPage;
+		renderPage.ShowDialog();
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
@@ -661,6 +704,9 @@ private: System::Void Delete_Click(System::Object^ sender, System::EventArgs^ e)
 		while (myRender->Read()) {
 
 		}
+		this->Hide();
+		BEBS::AdminMenu renderPage;
+		renderPage.ShowDialog();
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);

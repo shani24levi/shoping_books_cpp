@@ -15,3 +15,13 @@ C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.vc
 C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.AdminMenu.resources
 C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.UsersControl.resources
 C:\Users\shani\Desktop\New folder (2)\New folder (2)\BEBS\BEBS\x64\Debug\BEBS.SalesControl.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.vcxprojAssemblyReference.cache
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.AdminMenu.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.HomePage.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.LogInMenu.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.RegisterMenu.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.SalesControl.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.ShoppingMenu.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.UsersControl.resources
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.vcxproj.GenerateResource.cache
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\x64\Debug\BEBS.vcxproj.CopyComplete
