@@ -18,6 +18,7 @@ namespace BEBS {
 		SalesControl(void)
 		{
 			InitializeComponent();
+			fillAll();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -60,16 +61,16 @@ namespace BEBS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SalesControl::typeid));
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea5 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea6 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->HomePage = (gcnew System::Windows::Forms::PictureBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -88,18 +89,18 @@ namespace BEBS {
 			// 
 			// chart1
 			// 
-			chartArea4->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea4);
-			legend4->Name = L"Legend1";
-			this->chart1->Legends->Add(legend4);
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
 			this->chart1->Location = System::Drawing::Point(53, 182);
 			this->chart1->Name = L"chart1";
-			series4->ChartArea = L"ChartArea1";
-			series4->Color = System::Drawing::Color::MidnightBlue;
-			series4->Legend = L"Legend1";
-			series4->Name = L"Books_Amount";
-			series4->YValuesPerPoint = 2;
-			this->chart1->Series->Add(series4);
+			series1->ChartArea = L"ChartArea1";
+			series1->Color = System::Drawing::Color::MidnightBlue;
+			series1->Legend = L"Legend1";
+			series1->Name = L"Books_Amount";
+			series1->YValuesPerPoint = 2;
+			this->chart1->Series->Add(series1);
 			this->chart1->Size = System::Drawing::Size(458, 342);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
@@ -145,36 +146,36 @@ namespace BEBS {
 			// 
 			// chart2
 			// 
-			chartArea5->Name = L"ChartArea1";
-			this->chart2->ChartAreas->Add(chartArea5);
-			legend5->Name = L"Legend1";
-			this->chart2->Legends->Add(legend5);
+			chartArea2->Name = L"ChartArea1";
+			this->chart2->ChartAreas->Add(chartArea2);
+			legend2->Name = L"Legend1";
+			this->chart2->Legends->Add(legend2);
 			this->chart2->Location = System::Drawing::Point(531, 112);
 			this->chart2->Name = L"chart2";
-			series5->ChartArea = L"ChartArea1";
-			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series5->Color = System::Drawing::Color::CornflowerBlue;
-			series5->Legend = L"Legend1";
-			series5->Name = L"Books";
-			this->chart2->Series->Add(series5);
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series2->Color = System::Drawing::Color::CornflowerBlue;
+			series2->Legend = L"Legend1";
+			series2->Name = L"Books";
+			this->chart2->Series->Add(series2);
 			this->chart2->Size = System::Drawing::Size(465, 168);
 			this->chart2->TabIndex = 28;
 			this->chart2->Text = L"chart2";
 			// 
 			// chart3
 			// 
-			chartArea6->Name = L"ChartArea1";
-			this->chart3->ChartAreas->Add(chartArea6);
-			legend6->Name = L"Legend1";
-			this->chart3->Legends->Add(legend6);
+			chartArea3->Name = L"ChartArea1";
+			this->chart3->ChartAreas->Add(chartArea3);
+			legend3->Name = L"Legend1";
+			this->chart3->Legends->Add(legend3);
 			this->chart3->Location = System::Drawing::Point(531, 323);
 			this->chart3->Name = L"chart3";
-			series6->ChartArea = L"ChartArea1";
-			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
-			series6->Color = System::Drawing::Color::Blue;
-			series6->Legend = L"Legend1";
-			series6->Name = L"Books";
-			this->chart3->Series->Add(series6);
+			series3->ChartArea = L"ChartArea1";
+			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series3->Color = System::Drawing::Color::Blue;
+			series3->Legend = L"Legend1";
+			series3->Name = L"Books";
+			this->chart3->Series->Add(series3);
 			this->chart3->Size = System::Drawing::Size(465, 201);
 			this->chart3->TabIndex = 29;
 			this->chart3->Text = L"chart3";
@@ -245,8 +246,7 @@ namespace BEBS {
 			// 
 			// SalesControl
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1076, 536);
 			this->Controls->Add(this->button2);
@@ -395,6 +395,34 @@ private: System::Void weekly_Click(System::Object^ sender, System::EventArgs^ e)
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+}
+
+private: Void fillAll(void) {
+	String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
+	MySqlConnection^ conData = gcnew MySqlConnection(con);
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select count(bl.book_id), bl.book_id, b.title, order_date from book_store.book_list bl inner join book_store.shoping_carts s on bl.shoping_cart_id = s.shoping_cart_id inner join book_store.books b on bl.book_id = b.book_id WHERE  done = 'yes' and (order_date >= '2020-11-01' and order_date <= '2020-11-20') group by b.book_id;", conData);
+	MySqlDataReader^ myRender;
+
+	this->chart1->Series["Books_Amount"]->Points->Clear();
+	this->chart2->Series["Books"]->Points->Clear();
+	this->chart3->Series["Books"]->Points->Clear();
+
+	try {
+		conData->Open();
+		myRender = cmdDB->ExecuteReader();
+		while (myRender->Read()) {
+			String^ vtitle = myRender->GetString("title");
+			String^ vprice = myRender->GetInt32("count(bl.book_id)").ToString();
+
+			this->chart1->Series["Books_Amount"]->Points->AddXY(vtitle, myRender->GetInt32("count(bl.book_id)"));
+			this->chart2->Series["Books"]->Points->AddXY(vtitle, myRender->GetInt32("count(bl.book_id)"));
+			this->chart3->Series["Books"]->Points->AddXY(vtitle, myRender->GetInt32("count(bl.book_id)"));
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+
 }
 private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {
 }

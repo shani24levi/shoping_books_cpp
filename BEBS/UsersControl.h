@@ -305,8 +305,7 @@ namespace BEBS {
 			// 
 			// UsersControl
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1076, 536);
 			this->Controls->Add(this->dataGridView1);
@@ -518,8 +517,8 @@ private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void HomePage_Click(System::Object^ sender, System::EventArgs^ e) {
 	/*this->~UsersControl();	BEBS::AdminMenu logIn;	logIn.ShowDialog();
-	*/
-	/*this->Hide();
+	
+	this->Hide();
 	BEBS::AdminMenu renderPage;
 	renderPage.ShowDialog();
 	*/

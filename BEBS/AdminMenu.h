@@ -151,7 +151,8 @@ namespace BEBS {
 			// 
 			this->img->Location = System::Drawing::Point(454, 106);
 			this->img->Name = L"img";
-			this->img->Size = System::Drawing::Size(162, 158);
+			this->img->Size = System::Drawing::Size(162, 153);
+			this->img->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->img->TabIndex = 1;
 			this->img->TabStop = false;
 			// 
@@ -282,9 +283,9 @@ namespace BEBS {
 			// 
 			this->Profit->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->Profit->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->Profit->Location = System::Drawing::Point(920, 12);
+			this->Profit->Location = System::Drawing::Point(969, 14);
 			this->Profit->Name = L"Profit";
-			this->Profit->Size = System::Drawing::Size(83, 50);
+			this->Profit->Size = System::Drawing::Size(104, 50);
 			this->Profit->TabIndex = 15;
 			this->Profit->Text = L"Profit";
 			this->Profit->UseVisualStyleBackColor = false;
@@ -294,9 +295,9 @@ namespace BEBS {
 			// 
 			this->Sales->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->Sales->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->Sales->Location = System::Drawing::Point(839, 12);
+			this->Sales->Location = System::Drawing::Point(857, 14);
 			this->Sales->Name = L"Sales";
-			this->Sales->Size = System::Drawing::Size(75, 50);
+			this->Sales->Size = System::Drawing::Size(106, 50);
 			this->Sales->TabIndex = 16;
 			this->Sales->Text = L"Sales";
 			this->Sales->UseVisualStyleBackColor = false;
@@ -306,9 +307,9 @@ namespace BEBS {
 			// 
 			this->Users->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->Users->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->Users->Location = System::Drawing::Point(758, 12);
+			this->Users->Location = System::Drawing::Point(758, 14);
 			this->Users->Name = L"Users";
-			this->Users->Size = System::Drawing::Size(75, 50);
+			this->Users->Size = System::Drawing::Size(93, 50);
 			this->Users->TabIndex = 17;
 			this->Users->Text = L"Users";
 			this->Users->UseVisualStyleBackColor = false;
@@ -318,9 +319,9 @@ namespace BEBS {
 			// 
 			this->Orders->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->Orders->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->Orders->Location = System::Drawing::Point(653, 12);
+			this->Orders->Location = System::Drawing::Point(643, 14);
 			this->Orders->Name = L"Orders";
-			this->Orders->Size = System::Drawing::Size(96, 50);
+			this->Orders->Size = System::Drawing::Size(109, 50);
 			this->Orders->TabIndex = 18;
 			this->Orders->Text = L"Orders";
 			this->Orders->UseVisualStyleBackColor = false;
@@ -362,9 +363,9 @@ namespace BEBS {
 			// 
 			this->Discount->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->Discount->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->Discount->Location = System::Drawing::Point(551, 12);
+			this->Discount->Location = System::Drawing::Point(519, 14);
 			this->Discount->Name = L"Discount";
-			this->Discount->Size = System::Drawing::Size(96, 50);
+			this->Discount->Size = System::Drawing::Size(118, 50);
 			this->Discount->TabIndex = 22;
 			this->Discount->Text = L"Discount";
 			this->Discount->UseVisualStyleBackColor = false;
@@ -480,8 +481,7 @@ namespace BEBS {
 			// 
 			// AdminMenu
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::SystemColors::ControlText;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
@@ -522,6 +522,7 @@ namespace BEBS {
 			this->Name = L"AdminMenu";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"AdminMenu";
+			this->Load += gcnew System::EventHandler(this, &AdminMenu::AdminMenu_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->img))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -587,6 +588,7 @@ private: System::Void listBox_SelectedIndexChanged(System::Object^ sender, Syste
 			String^ vauthor = myRender->GetString("author");
 			//this->img->BackgroundImage = Image::FromFile("Image\\cpp1.jpg");
 			this->img->BackgroundImage = Image::FromFile(vimg);
+
 
 
 			//set vals to text box
@@ -759,6 +761,9 @@ private: System::Void Discount_Click(System::Object^ sender, System::EventArgs^ 
 	this->Hide();
 	BEBS::DiscountControl nextPag;
 	nextPag.ShowDialog();
+}
+
+private: System::Void AdminMenu_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

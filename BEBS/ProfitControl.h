@@ -18,6 +18,7 @@ namespace BEBS {
 		ProfitControl(void)
 		{
 			InitializeComponent();
+			fillAll();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -57,9 +58,9 @@ namespace BEBS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ProfitControl::typeid));
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->weekly = (gcnew System::Windows::Forms::Button());
@@ -139,18 +140,18 @@ namespace BEBS {
 			// 
 			// chart1
 			// 
-			chartArea1->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea1);
-			legend1->Name = L"Legend1";
-			this->chart1->Legends->Add(legend1);
+			chartArea2->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea2);
+			legend2->Name = L"Legend1";
+			this->chart1->Legends->Add(legend2);
 			this->chart1->Location = System::Drawing::Point(569, 98);
 			this->chart1->Name = L"chart1";
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
-			series1->Color = System::Drawing::Color::Blue;
-			series1->Legend = L"Legend1";
-			series1->Name = L"Books";
-			this->chart1->Series->Add(series1);
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series2->Color = System::Drawing::Color::Blue;
+			series2->Legend = L"Legend1";
+			series2->Name = L"Books";
+			this->chart1->Series->Add(series2);
 			this->chart1->Size = System::Drawing::Size(465, 395);
 			this->chart1->TabIndex = 36;
 			this->chart1->Text = L"chart1";
@@ -168,7 +169,7 @@ namespace BEBS {
 			// 
 			// dataGridView1
 			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::Color::Black;
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(67, 168);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -179,8 +180,7 @@ namespace BEBS {
 			// 
 			// ProfitControl
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1076, 536);
 			this->Controls->Add(this->dataGridView1);
@@ -232,6 +232,38 @@ namespace BEBS {
 			MessageBox::Show(ex->Message);
 		}
 	}
+private: Void fillAll(void) {
+	String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
+	MySqlConnection^ conData = gcnew MySqlConnection(con);
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select sum(b.price), b.title, bl.book_id from book_store.book_list bl inner join book_store.shoping_carts s on bl.shoping_cart_id = s.shoping_cart_id inner join book_store.books b on bl.book_id = b.book_id WHERE  done = 'yes' and (order_date >= '2020-11-01' and order_date <= '2020-11-20') group by b.price;", conData);
+	MySqlDataReader^ myRender;
+
+	this->chart1->Series["Books"]->Points->Clear();
+
+	try {
+		conData->Open();
+		myRender = cmdDB->ExecuteReader();
+		while (myRender->Read()) {
+			String^ vtitle = myRender->GetString("book_id");
+			String^ vprice = myRender->GetInt32("sum(b.price)").ToString();
+			this->chart1->Series["Books"]->Points->AddXY(vtitle, myRender->GetInt32("sum(b.price)"));
+		}
+		conData->Close();
+		conData->Open();
+		MySqlDataAdapter^ sda = gcnew MySqlDataAdapter();
+		sda->SelectCommand = cmdDB;
+		DataTable^ dbdataset = gcnew DataTable();
+		sda->Fill(dbdataset);
+		BindingSource^ bSorce = gcnew BindingSource();
+
+		bSorce->DataSource = dbdataset;
+		dataGridView1->DataSource = bSorce;
+		sda->Update(dbdataset);
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
 	MySqlConnection^ conData = gcnew MySqlConnection(con);
