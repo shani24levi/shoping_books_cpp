@@ -587,6 +587,7 @@ private: System::Void listBox_SelectedIndexChanged(System::Object^ sender, Syste
 			String^ vimg = myRender->GetString("img");
 			String^ vauthor = myRender->GetString("author");
 			//this->img->BackgroundImage = Image::FromFile("Image\\cpp1.jpg");
+			//String^ vimg = myRender->GetString("img");
 			this->img->BackgroundImage = Image::FromFile(vimg);
 
 

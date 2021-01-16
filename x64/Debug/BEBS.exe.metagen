@@ -6,6 +6,7 @@
   BEBS.ProfitControl.resources - Embedded, ContainedInManifestFile, 
   BEBS.RegisterMenu.resources - Embedded, ContainedInManifestFile, 
   BEBS.SalesControl.resources - Embedded, ContainedInManifestFile, 
+  BEBS.ShopingCart.resources - Embedded, ContainedInManifestFile, 
   BEBS.ShoppingMenu.resources - Embedded, ContainedInManifestFile, 
   BEBS.UsersControl.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -61,4 +62,8 @@ Class BEBS.LogInMenu: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class BEBS.HomePage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class BEBS.ShopingCart: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

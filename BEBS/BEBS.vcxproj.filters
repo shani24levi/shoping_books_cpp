@@ -56,6 +56,9 @@
     <ClInclude Include="DiscountControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ShopingCart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BEBS.cpp">
@@ -95,6 +98,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DiscountControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShopingCart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
