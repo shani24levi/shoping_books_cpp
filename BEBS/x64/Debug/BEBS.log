@@ -1,3 +1,26 @@
-﻿  ShopingCart.cpp
+﻿  pch.cpp
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\UsersControl.h(351,20): warning C4101: 'myRender': unreferenced local variable
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\UsersControl.h(406,21): warning C4101: 'myRender2': unreferenced local variable
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\AdminMenu.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\ShoppingMenu.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (1255). Save the file in Unicode format to prevent data loss
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\RegisterMenu.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (1255). Save the file in Unicode format to prevent data loss
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\RegisterMenu.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\LogInMenu.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (1255). Save the file in Unicode format to prevent data loss
+C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\BEBS\HomePage.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (1255). Save the file in Unicode format to prevent data loss
+  AdminMenu.cpp
+  AssemblyInfo.cpp
+  BEBS.cpp
+  DiscountControl.cpp
+  HomePage.cpp
+  LogInMenu.cpp
+  MySQL.cpp
+  OrdersControl.cpp
+  ProfitControl.cpp
+  RegisterMenu.cpp
+  SalesControl.cpp
+  ShopingCart.cpp
+  ShoppingMenu.cpp
+  UsersControl.cpp
+  Generating Code...
   AdminMenu.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   BEBS.vcxproj -> C:\Users\shani\Desktop\shoping_books_cpp-master\shoping_books_cpp-master\x64\Debug\BEBS.exe

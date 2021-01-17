@@ -15,6 +15,7 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
+#include "ShopingCart.h"
 #include "DiscountControl.h"
 #include "OrdersControl.h"
 #include "ProfitControl.h"

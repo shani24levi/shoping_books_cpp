@@ -59,6 +59,9 @@
     <ClInclude Include="ShopingCart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MySQL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BEBS.cpp">
@@ -101,6 +104,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShopingCart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MySQL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

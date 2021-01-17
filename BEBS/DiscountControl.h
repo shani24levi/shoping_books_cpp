@@ -25,6 +25,14 @@ namespace BEBS {
 			//TODO: Add the constructor code here
 			//
 		}
+		DiscountControl(Form^ lastForm)
+		{
+			this->lastForm = lastForm;
+			InitializeComponent();
+			fillListBox();
+			fillCurrent();
+			fillListBox2();
+		}
 
 	protected:
 		/// <summary>
@@ -37,6 +45,8 @@ namespace BEBS {
 				delete components;
 			}
 		}
+	private:  Form^ lastForm;
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ discount;
 
@@ -234,6 +244,7 @@ namespace BEBS {
 			this->HomePage->Size = System::Drawing::Size(40, 40);
 			this->HomePage->TabIndex = 38;
 			this->HomePage->TabStop = false;
+			this->HomePage->Click += gcnew System::EventHandler(this, &DiscountControl::HomePage_Click);
 			// 
 			// id_tet
 			// 
@@ -345,6 +356,7 @@ namespace BEBS {
 			this->Controls->Add(this->label5);
 			this->Name = L"DiscountControl";
 			this->Text = L"DiscountControl";
+			this->Load += gcnew System::EventHandler(this, &DiscountControl::DiscountControl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomePage))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -541,6 +553,12 @@ private: System::Void block_Click(System::Object^ sender, System::EventArgs^ e) 
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+}
+private: System::Void HomePage_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->~DiscountControl();
+	lastForm->Show();
+}
+private: System::Void DiscountControl_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

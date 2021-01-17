@@ -23,9 +23,10 @@ namespace BEBS {
 			//TODO: Add the constructor code here
 			//
 		}
-		ShopingCart(String^ lastUserId, String^ lastCartId)
+		ShopingCart(Form^ lastForm, String^ lastUserId, Int32^ lastCartId)
 		{
-			this->lastCartId = lastCartId;
+			this->lastForm = lastForm;
+			this->lastCartId = lastCartId->ToString();
 			this->lastUserId = lastUserId;
 			InitializeComponent();
 			fillListBox();
@@ -42,12 +43,13 @@ namespace BEBS {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ BUY;
-	protected:
-
+	private:  Form^ lastForm;
 	private:  String^ lastUserId;
 	private:  String^ lastCartId;
 
+
+	private: System::Windows::Forms::Button^ BUY;
+	protected:
 
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::PictureBox^ img;
@@ -82,6 +84,10 @@ namespace BEBS {
 
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::PictureBox^ HomePage;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::TextBox^ id_list;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	protected:
 
@@ -119,7 +125,13 @@ namespace BEBS {
 			this->info_txt = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->HomePage = (gcnew System::Windows::Forms::PictureBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->id_list = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->img))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomePage))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// BUY
@@ -159,6 +171,7 @@ namespace BEBS {
 			this->img->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->img->TabIndex = 36;
 			this->img->TabStop = false;
+			this->img->Click += gcnew System::EventHandler(this, &ShopingCart::img_Click);
 			// 
 			// delet
 			// 
@@ -170,13 +183,14 @@ namespace BEBS {
 			this->delet->ForeColor = System::Drawing::Color::White;
 			this->delet->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"delet.Image")));
 			this->delet->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->delet->Location = System::Drawing::Point(121, 401);
+			this->delet->Location = System::Drawing::Point(195, 395);
 			this->delet->Name = L"delet";
 			this->delet->Size = System::Drawing::Size(126, 43);
 			this->delet->TabIndex = 38;
 			this->delet->Text = L"Delete";
 			this->delet->TextAlign = System::Drawing::ContentAlignment::TopRight;
 			this->delet->UseVisualStyleBackColor = false;
+			this->delet->Click += gcnew System::EventHandler(this, &ShopingCart::delet_Click);
 			// 
 			// title_txt
 			// 
@@ -360,12 +374,59 @@ namespace BEBS {
 			this->comboBox1->TabIndex = 58;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &ShopingCart::comboBox1_SelectedIndexChanged);
 			// 
+			// HomePage
+			// 
+			this->HomePage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"HomePage.BackgroundImage")));
+			this->HomePage->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->HomePage->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->HomePage->Location = System::Drawing::Point(981, 23);
+			this->HomePage->Name = L"HomePage";
+			this->HomePage->Size = System::Drawing::Size(40, 40);
+			this->HomePage->TabIndex = 59;
+			this->HomePage->TabStop = false;
+			this->HomePage->Click += gcnew System::EventHandler(this, &ShopingCart::HomePage_Click);
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->BackColor = System::Drawing::Color::Transparent;
+			this->label8->ForeColor = System::Drawing::Color::Transparent;
+			this->label8->Location = System::Drawing::Point(352, 413);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(0, 25);
+			this->label8->TabIndex = 60;
+			// 
+			// id_list
+			// 
+			this->id_list->BackColor = System::Drawing::Color::Black;
+			this->id_list->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->id_list->ForeColor = System::Drawing::Color::Black;
+			this->id_list->Location = System::Drawing::Point(26, 459);
+			this->id_list->Name = L"id_list";
+			this->id_list->Size = System::Drawing::Size(10, 44);
+			this->id_list->TabIndex = 61;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Black;
+			this->pictureBox1->Location = System::Drawing::Point(12, 430);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(79, 94);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 62;
+			this->pictureBox1->TabStop = false;
+			// 
 			// ShopingCart
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1076, 536);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->id_list);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->HomePage);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->info_txt);
@@ -390,6 +451,8 @@ namespace BEBS {
 			this->Text = L"ShopingCart";
 			this->Load += gcnew System::EventHandler(this, &ShopingCart::ShopingCart_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->img))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomePage))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -404,19 +467,35 @@ private: System::Void ShopingCart_Load(System::Object^ sender, System::EventArgs
 private: Void fillListBox(void) {
 	String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
 	MySqlConnection^ conData = gcnew MySqlConnection(con);
-	MySqlCommand^ cmdDB = gcnew MySqlCommand("select * from book_store.book_list bl inner join book_store.shoping_carts sc on bl.shoping_cart_id = sc.shoping_cart_id  inner join book_store.books b on bl.book_id = b.book_id  where sc.shoping_cart_id=1;", conData);  //lastCartId;
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select * from book_store.book_list bl inner join book_store.shoping_carts sc on bl.shoping_cart_id = sc.shoping_cart_id  inner join book_store.books b on bl.book_id = b.book_id inner join book_store.discounts d on d.discount_id = sc.discount_id  where sc.shoping_cart_id= 1 ;", conData);  //  '"+this->lastCartId+"'
 	MySqlDataReader^ myRender;
 
 	try {
 		conData->Open();
 		myRender = cmdDB->ExecuteReader();
+		int p = 0;
 		while (myRender->Read()) {
 			String^ vTitle = myRender->GetString("title");
 			String^ vid = myRender->GetInt32("book_list_id").ToString();
-
-			listBox->Items->Add(vid + '" :"' + vTitle);
+			String^ vprice = myRender->GetInt32("price").ToString();
+			
+			if (this->lastUserId == "100") {
+				p += myRender->GetInt32("price");
+			}
+			else if (myRender->GetInt32("percent").ToString() != nullptr) {
+				int a = myRender->GetInt32("price");
+				int b = (myRender->GetInt32("percent"))*int(0.01); ///what? why dont make int*int?@
+				p += a * b;
+			}
+			else {
+				p += myRender->GetInt32("price");
+			}
+			listBox->Items->Add(vid + " : " + vTitle);
 			comboBox1->Items->Add(vid);
+	
 		}
+		total_txt->Text = p.ToString();
+
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
@@ -428,7 +507,7 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 
 	String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
 	MySqlConnection^ conData = gcnew MySqlConnection(con);
-	MySqlCommand^ cmdDB = gcnew MySqlCommand("select * from book_store.books where title='" + comboVal + "';", conData);
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select * from book_store.book_list bl inner join book_store.shoping_carts sc  on bl.shoping_cart_id = sc.shoping_cart_id  inner join book_store.books b  on bl.book_id = b.book_id  inner join book_store.discounts d on d.discount_id = sc.discount_id  where bl.book_list_id='" + comboVal + "';", conData);
 	MySqlDataReader^ myRender;
 
 	try {
@@ -442,16 +521,26 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 			String^ vinfo = myRender->GetString("info");
 			String^ vimg = myRender->GetString("img");
 			String^ vauthor = myRender->GetString("author");
-			if (myRender->GetInt32("percent").ToString() != nullptr) {
+			String^ vidList = myRender->GetString("book_list_id");
+
+			if (this->lastUserId == "100") {
+				String^ vpercent = "0";
+				disc_txt->Text = vpercent;
+				final_txt->Text = vprice;
+			}
+			else if (myRender->GetInt32("percent").ToString() != nullptr) {
 				String^ vpercent = myRender->GetInt32("percent").ToString();
 				disc_txt->Text = vpercent;
+				String^ finalInt = (myRender->GetInt32("price") * (myRender->GetInt32("percent") / 100)).ToString();
+				final_txt->Text = finalInt;
 			}
 			else {
 				String^ vpercent = "NoN";
 				disc_txt->Text = vpercent;
+				final_txt->Text = vprice;
 			}
-			//String^ vimg = myRender->GetString("img");
-			//this->img->BackgroundImage = Image::FromFile(vimg);
+			String^ vimg1 = myRender->GetString("img");
+			this->img->BackgroundImage = Image::FromFile(vimg1);
 
 			//final price, taotal price 
 			//set vals to text box
@@ -459,7 +548,36 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 			price_txt->Text = vprice;
 			info_txt->Text = vinfo;
 			auther_txt->Text = vauthor;
+			id_list->Text = vidList;
+
 		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+}
+private: System::Void img_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void HomePage_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->~ShopingCart();
+	lastForm->Show();
+}
+private: System::Void delet_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
+	MySqlConnection^ conData = gcnew MySqlConnection(con);
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("delete from book_store.book_list where book_list_id='" + id_list->Text + "' ;", conData);
+	MySqlDataReader^ myRender;
+
+	try {
+		conData->Open();
+		myRender = cmdDB->ExecuteReader();
+		MessageBox::Show("Book Deleted From Cart");
+		while (myRender->Read()) {
+
+		}
+		this->Hide();
+		BEBS::ShopingCart renderPage;
+		renderPage.ShowDialog();
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);

@@ -23,6 +23,12 @@ namespace BEBS {
 			//TODO: Add the constructor code here
 			//
 		}
+		ProfitControl(Form^ lastForm)
+		{
+			this->lastForm = lastForm;
+			InitializeComponent();
+			fillAll();
+		}
 
 	protected:
 		/// <summary>
@@ -36,6 +42,7 @@ namespace BEBS {
 			}
 		}
 	private: System::Windows::Forms::Label^ label5;
+	private:  Form^ lastForm;
 
 	private: System::Windows::Forms::Button^ weekly;
 	private: System::Windows::Forms::Button^ button2;
@@ -58,9 +65,9 @@ namespace BEBS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ProfitControl::typeid));
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->weekly = (gcnew System::Windows::Forms::Button());
@@ -140,18 +147,18 @@ namespace BEBS {
 			// 
 			// chart1
 			// 
-			chartArea2->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea2);
-			legend2->Name = L"Legend1";
-			this->chart1->Legends->Add(legend2);
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
 			this->chart1->Location = System::Drawing::Point(569, 98);
 			this->chart1->Name = L"chart1";
-			series2->ChartArea = L"ChartArea1";
-			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
-			series2->Color = System::Drawing::Color::Blue;
-			series2->Legend = L"Legend1";
-			series2->Name = L"Books";
-			this->chart1->Series->Add(series2);
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series1->Color = System::Drawing::Color::Blue;
+			series1->Legend = L"Legend1";
+			series1->Name = L"Books";
+			this->chart1->Series->Add(series1);
 			this->chart1->Size = System::Drawing::Size(465, 395);
 			this->chart1->TabIndex = 36;
 			this->chart1->Text = L"chart1";
@@ -166,6 +173,7 @@ namespace BEBS {
 			this->BackLastPage->Size = System::Drawing::Size(40, 40);
 			this->BackLastPage->TabIndex = 37;
 			this->BackLastPage->TabStop = false;
+			this->BackLastPage->Click += gcnew System::EventHandler(this, &ProfitControl::BackLastPage_Click);
 			// 
 			// dataGridView1
 			// 
@@ -192,6 +200,7 @@ namespace BEBS {
 			this->Controls->Add(this->label5);
 			this->Name = L"ProfitControl";
 			this->Text = L"ProfitControl";
+			this->Load += gcnew System::EventHandler(this, &ProfitControl::ProfitControl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BackLastPage))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -327,6 +336,12 @@ private: System::Void Quarterly_Click(System::Object^ sender, System::EventArgs^
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+}
+private: System::Void ProfitControl_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void BackLastPage_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->~ProfitControl();
+	lastForm->Show();
 }
 };
 }

@@ -24,6 +24,12 @@ namespace BEBS {
 			//TODO: Add the constructor code here
 			//
 		}
+		UsersControl(Form^ lastForm)
+		{
+			this->lastForm = lastForm;
+			InitializeComponent();
+			fillListBox();
+		}
 
 	protected:
 		/// <summary>
@@ -37,6 +43,7 @@ namespace BEBS {
 			}
 		}
 
+	private:  Form^ lastForm;
 
 
 	private: System::Windows::Forms::ListBox^ listBox1;
@@ -326,6 +333,7 @@ namespace BEBS {
 			this->Controls->Add(this->listBox1);
 			this->Name = L"UsersControl";
 			this->Text = L"UsersControl";
+			this->Load += gcnew System::EventHandler(this, &UsersControl::UsersControl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomePage))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
@@ -515,13 +523,10 @@ private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
 		MessageBox::Show(ex->Message);
 	}
 }
-private: System::Void HomePage_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*this->~UsersControl();	BEBS::AdminMenu logIn;	logIn.ShowDialog();
-	
-	this->Hide();
-	BEBS::AdminMenu renderPage;
-	renderPage.ShowDialog();
-	*/
+private: System::Void HomePage_Click(System::Object^ sender, System::EventArgs^ e) {	this->~UsersControl();
+	lastForm->Show();
+}
+private: System::Void UsersControl_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

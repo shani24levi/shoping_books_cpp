@@ -3,6 +3,20 @@
 -- 1 login
 select user_name,user_role from users where email = 'idan@gmail.com' and pass=123;
 
+select * from book_store.book_list bl inner join book_store.shoping_carts sc on bl.shoping_cart_id = sc.shoping_cart_id  inner join book_store.books b on bl.book_id = b.book_id  where sc.shoping_cart_id=1;
+
+select * from book_store.book_list bl inner join book_store.shoping_carts sc  on bl.shoping_cart_id = sc.shoping_cart_id  inner join book_store.books b  on bl.book_id = b.book_id  inner join book_store.discounts d on d.discount_id = sc.discount_id  where sc.shoping_cart_id=1;
+
+delete from book_store.book_list where book_list_id=1;
+
+select * from book_store.book_list bl 
+inner join book_store.shoping_carts sc  
+on bl.shoping_cart_id = sc.shoping_cart_id  
+inner join book_store.books b  on bl.book_id = b.book_id  
+inner join book_store.discounts d on d.discount_id = sc.discount_id  
+where bl.book_list_id=1 and sc.shoping_cart_id=1;
+
+
 -- 1 testing
 select * from book_store.users ;
 select * from book_store.books ;
@@ -82,7 +96,7 @@ update book_store.orders_from_provider set amount=299,provider='yaaa',order_stat
 select * from book_store.orders_from_provider ;
 
 select * from book_store.discounts where (date_from >= '2020-12-30' and  date_until <= '2021-02-20') ;
-
+select * from book_store.discounts where (date_from >= '2021-01-18' and  date_until <= '2021-12-30');
 select * from book_store.discounts; -- where (date_from >= '2020-12-30' and  date_until <= '2021-02-20') ;
 
 -- 1 register 

@@ -23,6 +23,12 @@ namespace BEBS {
 			//TODO: Add the constructor code here
 			//
 		}
+		SalesControl(Form^ lastForm)
+		{
+			this->lastForm = lastForm;
+			InitializeComponent();
+			fillAll();
+		}
 
 	protected:
 		/// <summary>
@@ -37,6 +43,7 @@ namespace BEBS {
 		}
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
 	protected:
+	private:  Form^ lastForm;
 
 	private: System::Windows::Forms::PictureBox^ HomePage;
 	private: System::Windows::Forms::Label^ label5;
@@ -116,6 +123,7 @@ namespace BEBS {
 			this->HomePage->Size = System::Drawing::Size(40, 40);
 			this->HomePage->TabIndex = 11;
 			this->HomePage->TabStop = false;
+			this->HomePage->Click += gcnew System::EventHandler(this, &SalesControl::HomePage_Click);
 			// 
 			// label5
 			// 
@@ -262,6 +270,7 @@ namespace BEBS {
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->Name = L"SalesControl";
 			this->Text = L"SalesControl";
+			this->Load += gcnew System::EventHandler(this, &SalesControl::SalesControl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomePage))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
@@ -472,6 +481,12 @@ private: System::Void Quarterly_Click(System::Object^ sender, System::EventArgs^
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+}
+private: System::Void SalesControl_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void HomePage_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->~SalesControl();
+	lastForm->Show();
 }
 };
 }

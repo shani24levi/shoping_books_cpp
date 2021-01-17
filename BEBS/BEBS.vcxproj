@@ -139,6 +139,7 @@
     <ClInclude Include="LogInMenu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MySQL.h" />
     <ClInclude Include="OrdersControl.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -170,6 +171,7 @@
     <ClCompile Include="DiscountControl.cpp" />
     <ClCompile Include="HomePage.cpp" />
     <ClCompile Include="LogInMenu.cpp" />
+    <ClCompile Include="MySQL.cpp" />
     <ClCompile Include="OrdersControl.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

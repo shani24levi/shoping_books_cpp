@@ -13,6 +13,7 @@ namespace BEBS {
 			InitializeComponent();
 			fillListBox();
 			fillCom();
+			//lastForm = form;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -29,6 +30,8 @@ namespace BEBS {
 				delete components;
 			}
 		}
+	private:  Form^ lastForm;
+
 	private: System::Windows::Forms::ListBox^ listBox;
 	protected:
 
@@ -537,7 +540,7 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	BEBS::UsersControl users;
+	BEBS::UsersControl users(this);
 	users.ShowDialog();
 }
 
@@ -745,22 +748,22 @@ private: System::Void Delete_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void Sales_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	BEBS::SalesControl sales;
+	BEBS::SalesControl sales(this);
 	sales.ShowDialog();
 }
 private: System::Void Profit_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	BEBS::ProfitControl nextPag;
+	BEBS::ProfitControl nextPag(this);
 	nextPag.ShowDialog();
 }
 private: System::Void Orders_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	BEBS::OrdersControl nextPag;
+	BEBS::OrdersControl nextPag(this);
 	nextPag.ShowDialog();
 }
 private: System::Void Discount_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	BEBS::DiscountControl nextPag;
+	BEBS::DiscountControl nextPag(this);
 	nextPag.ShowDialog();
 }
 

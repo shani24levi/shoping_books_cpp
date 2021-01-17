@@ -188,7 +188,7 @@ namespace BEBS {
 			this->LogIn->ForeColor = System::Drawing::Color::White;
 			this->LogIn->Location = System::Drawing::Point(83, 400);
 			this->LogIn->Name = L"LogIn";
-			this->LogIn->Size = System::Drawing::Size(127, 50);
+			this->LogIn->Size = System::Drawing::Size(132, 50);
 			this->LogIn->TabIndex = 0;
 			this->LogIn->Text = L"Log In";
 			this->LogIn->UseVisualStyleBackColor = false;
@@ -271,15 +271,18 @@ namespace BEBS {
 			//get User name
 			String^ name;
 			String^ rloe;
+			String^ id;
+
 
 			while (myRender->Read()) {
 				count++;
 				name = myRender->GetString("user_name");
+				id = myRender->GetString("user_id");
 				rloe = myRender->GetString("user_role");
 			}
 			if (count == 1 && rloe =="buyer") {
 				this->~LogInMenu();
-				BEBS::ShoppingMenu shop(name, lastForm);
+				BEBS::ShoppingMenu shop(name, id, lastForm);
 				shop.ShowDialog();
 			}
 

@@ -23,6 +23,12 @@ namespace BEBS {
 			//TODO: Add the constructor code here
 			//
 		}
+		OrdersControl(Form^ lastForm)
+		{
+			this->lastForm = lastForm;
+			InitializeComponent();
+			fillCom();
+		}
 
 	protected:
 		/// <summary>
@@ -35,6 +41,7 @@ namespace BEBS {
 				delete components;
 			}
 		}
+	private:  Form^ lastForm;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ weekly;
 	private: System::Windows::Forms::TextBox^ provider_txt;
@@ -319,11 +326,11 @@ namespace BEBS {
 			this->HomePage->Size = System::Drawing::Size(40, 40);
 			this->HomePage->TabIndex = 51;
 			this->HomePage->TabStop = false;
+			this->HomePage->Click += gcnew System::EventHandler(this, &OrdersControl::HomePage_Click);
 			// 
 			// OrdersControl
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1076, 536);
 			this->Controls->Add(this->HomePage);
@@ -347,6 +354,7 @@ namespace BEBS {
 			this->Controls->Add(this->label5);
 			this->Name = L"OrdersControl";
 			this->Text = L"OrdersControl";
+			this->Load += gcnew System::EventHandler(this, &OrdersControl::OrdersControl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomePage))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -452,6 +460,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void weekly_Click(System::Object^ sender, System::EventArgs^ e) {
 	MessageBox::Show("Page in process");
+}
+private: System::Void OrdersControl_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void HomePage_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->~OrdersControl();
+	lastForm->Show();
 }
 };
 }

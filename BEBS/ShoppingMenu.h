@@ -13,18 +13,47 @@ namespace BEBS {
 		{
 			InitializeComponent();
 			this->UserName->Text = L"LogIn";
+			this->idUser = "100"; ///100==unrigister
+			this->added = 0;
+			//when add an item so do this->added++!!!!!!
 		}
 		ShoppingMenu(Form^ lastForm)
 		{
 			this->lastForm = lastForm;
 			InitializeComponent();
 			this->UserName->Text = L"LogIn";
+			this->idUser = "100"; ///100==unrigister
+			this->added = 0;
+
 		}
-		ShoppingMenu(String^ Name, Form^ lastForm)
+		ShoppingMenu(String^ Name, String^ Id, Form^ lastForm)
 		{
 			this->lastForm = lastForm;
 			InitializeComponent();
+			this->added = 0;
 			this->UserName->Text = Name;
+			this->idUser = Id;
+
+			//create new shoping card each login.
+			//int v= newCart(idUser);
+			String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
+			MySqlConnection^ conData = gcnew MySqlConnection(con);
+			MySqlCommand^ cmdDB0 = gcnew MySqlCommand("select count(*) from book_store.shoping_carts;", conData);
+			MySqlDataReader^ myRender0;
+			int^ vId;
+			try {
+				conData->Open();
+				myRender0 = cmdDB0->ExecuteReader();
+				while (myRender0->Read()) {
+					vId = myRender0->GetInt32("count(*)") + 1;
+				}
+				this->cartId = vId;
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show(ex->Message);
+				this->cartId = -1;
+
+			}
 		}
 	protected:
 		/// <summary>
@@ -46,6 +75,9 @@ namespace BEBS {
 
 
 	private:  Form^ lastForm;
+	private:  String^ idUser; 
+	private:  Int32^ cartId;
+	private:  int added;
 
 	private: System::Windows::Forms::PictureBox^ SearchIcon;
 	private: System::Windows::Forms::PictureBox^ profile;
@@ -113,6 +145,7 @@ namespace BEBS {
 			this->CartIcon->Size = System::Drawing::Size(49, 40);
 			this->CartIcon->TabIndex = 5;
 			this->CartIcon->TabStop = false;
+			this->CartIcon->Click += gcnew System::EventHandler(this, &ShoppingMenu::CartIcon_Click);
 			// 
 			// SearchIcon
 			// 
@@ -146,7 +179,7 @@ namespace BEBS {
 			this->UserName->ForeColor = System::Drawing::Color::White;
 			this->UserName->Location = System::Drawing::Point(822, 100);
 			this->UserName->Name = L"UserName";
-			this->UserName->Size = System::Drawing::Size(0, 24);
+			this->UserName->Size = System::Drawing::Size(0, 33);
 			this->UserName->TabIndex = 8;
 			this->UserName->Click += gcnew System::EventHandler(this, &ShoppingMenu::profile_Click);
 			// 
@@ -209,5 +242,45 @@ namespace BEBS {
 		}
 	}
 
+private: System::Void CartIcon_Click(System::Object^ sender, System::EventArgs^ e) {
+	/*if (this->added==0) {
+		MessageBox::Show("No Items Added To Current Shoping Cart");
+	}
+	else
+	{
+		this->Hide();
+		BEBS::ShopingCart cart(this, this->idUser, this->cartId);
+		cart.ShowDialog();
+
+	}*/
+
+	this->Hide();
+	BEBS::ShopingCart cart(this, this->idUser, this->cartId);
+	cart.ShowDialog();
+}
+
+
+/*
+private: Int32^ newCart(String idUser){
+	String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
+	MySqlConnection^ conData = gcnew MySqlConnection(con);
+	MySqlCommand^ cmdDB0 = gcnew MySqlCommand("select count(*) from book_store.shoping_carts;", conData);
+	MySqlDataReader^ myRender0;
+	int^ vId;
+
+	try {
+		conData->Open();
+		myRender0 = cmdDB0->ExecuteReader();
+		while (myRender0->Read()) {
+			vId = myRender0->GetInt32("count(*)") + 1;
+		}
+		return vId;
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+		return -1;
+	}
+}
+*/
 };
 }
