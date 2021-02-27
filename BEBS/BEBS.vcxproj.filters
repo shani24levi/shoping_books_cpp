@@ -77,6 +77,9 @@
     <ClInclude Include="HomePage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NewOrder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BEBS.cpp">
@@ -137,6 +140,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NewOrder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

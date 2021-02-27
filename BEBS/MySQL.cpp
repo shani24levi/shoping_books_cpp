@@ -1,4 +1,5 @@
 #include "pch.h"
+#include <typeinfo>  //for 'typeid' to work 
 
 MySQL::MySQL()
 {
@@ -367,15 +368,6 @@ Boolean^ MySQL::blockUser(System::Windows::Forms::TextBox^ textBoxEmail) {
 	return isOk;
 }
 
-//void setListChange(MySqlCommand^ cmdDB, System::Windows::Forms::TextBox^ textBoxlName, System::Windows::Forms::TextBox^ textBoxEmail, System::Windows::Forms::TextBox^ textBoxDate, System::Windows::Forms::TextBox^ textBoxSTA) {
-//	MySqlDataReader^ myRender;
-//}
-//void listChange(String^ listVal, System::Windows::Forms::TextBox^ textBoxlName, System::Windows::Forms::TextBox^ textBoxEmail, System::Windows::Forms::TextBox^ textBoxDate, System::Windows::Forms::TextBox^ textBoxSTA) {
-//	MySqlCommand^ cmdDB = gcnew MySqlCommand("select * from book_store.users where user_name='" + listVal + "' ;", conData);
-//	setListChange(cmdDB, textBoxlName, textBoxEmail, textBoxDate, textBoxSTA);
-//}
-
-
 //order controll
 void MySQL::setOrderCom(System::Windows::Forms::ComboBox^ comboBox1, MySqlCommand^ cmdDB) {
 	MySqlDataReader^ myRender;
@@ -655,3 +647,179 @@ Boolean^ MySQL::editVal(System::Windows::Forms::TextBox^ id_tet, System::Windows
 	return ok;
 }
 
+//orders page
+void MySQL::setBooksByAmount(MySqlCommand^ cmdDB, System::Windows::Forms::DataGridView^ booksTable) {
+	MySqlDataReader^ myRender;
+	try {
+		conData->Open();
+		myRender = cmdDB->ExecuteReader();
+		while (myRender->Read()) {
+		}
+		conData->Close();
+
+		MySqlDataAdapter^ sda = gcnew MySqlDataAdapter();
+		sda->SelectCommand = cmdDB;
+		DataTable^ dbdataset = gcnew DataTable();
+		sda->Fill(dbdataset);
+		BindingSource^ bSorce = gcnew BindingSource();
+		bSorce->DataSource = dbdataset;
+		booksTable->DataSource = bSorce;
+		sda->Update(dbdataset);
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+}
+void MySQL::booksByAmount(System::Windows::Forms::DataGridView^ booksTable) {
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select title, amount from book_store.books ORDER BY amount asc;", conData);
+	setBooksByAmount(cmdDB, booksTable);
+}
+
+
+//new order page
+
+void  MySQL::setBooksCom(MySqlCommand^ cmdDB, System::Windows::Forms::ComboBox^ comboBox1) {
+	MySqlDataReader^ myRender;
+
+	try {
+		conData->Open();
+		myRender = cmdDB->ExecuteReader();
+		while (myRender->Read()) {
+			String^ vt = myRender->GetString("title");
+			comboBox1->Items->Add(vt);
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+}
+void  MySQL::booksCom(System::Windows::Forms::ComboBox^ comboBox1) {
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select title from book_store.books;", conData);
+	setBooksCom(cmdDB, comboBox1);
+}
+
+Int32^ MySQL::setBookChange(MySqlCommand^ cmdDB, String^ comboVal, Int32^ idBook, System::Windows::Forms::TextBox^ bookName, System::Windows::Forms::TextBox^ auther, System::Windows::Forms::TextBox^ amount) {
+	MySqlDataReader^ myRender;
+	try {
+		conData->Open();
+		myRender = cmdDB->ExecuteReader();
+
+		if (myRender->Read()) {
+			String^ vId = myRender->GetInt32("book_id").ToString();
+			idBook = myRender->GetInt32("book_id");
+			String^ vtitle = myRender->GetString("title");
+			String^ vauther = myRender->GetString("author");
+
+			//set vals to text box
+			bookName->Text = vtitle;
+			auther->Text = vauther;
+
+			return idBook;
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+		return -1;
+	}
+}
+Int32^ MySQL::bookChange(String^ comboVal, Int32^ idBook, System::Windows::Forms::TextBox^ bookName, System::Windows::Forms::TextBox^ auther, System::Windows::Forms::TextBox^ amount) {
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select * from book_store.books where title= '" + comboVal + "';", conData);
+	Int32^ idBookf = setBookChange(cmdDB, comboVal, idBook, bookName, auther, amount);
+	return idBookf;
+
+}
+
+Int32^ MySQL::getIDBook() {
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select count(*) from book_store.books;", conData);
+	Int32^ idVal = setID(cmdDB);
+	return idVal;
+}
+void MySQL::createBook(System::Windows::Forms::TextBox^ bookName, System::Windows::Forms::TextBox^ auther) {
+	Int32^ idVal = getIDBook();
+}
+
+void MySQL::setProviderCom(MySqlCommand^ cmdDB, System::Windows::Forms::ComboBox^ comboBox2) {
+	MySqlDataReader^ myRender;
+	try {
+		conData->Open();
+		myRender = cmdDB->ExecuteReader();
+		while (myRender->Read()) {
+			String^ vt = myRender->GetString("provider");
+			comboBox2->Items->Add(vt);
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+}
+void MySQL::providerCom(System::Windows::Forms::ComboBox^ comboBox2) {
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select provider from book_store.orders_from_provider;", conData);
+	setProviderCom(cmdDB, comboBox2);
+}
+
+Int32^ MySQL::seGetIdOrder(MySqlCommand^ cmdDB) {
+	MySqlDataReader^ myRender0;
+	Int32^ vId;
+	try {
+		conData->Open();
+		myRender0 = cmdDB->ExecuteReader();
+		while (myRender0->Read()) {
+			vId = myRender0->GetInt32("count(*)") + 1;
+		}
+		conData->Close();
+		return vId;
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+		return -1;
+	}
+}
+Int32^ MySQL::getIdOrder() {
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select count(*) from book_store.orders_from_provider;", conData);
+	Int32^ idVal = seGetIdOrder(cmdDB);
+	return idVal;
+}
+
+Int32^ MySQL::getIDBookByName(System::Windows::Forms::ListBox^ listBox2) {
+	MySqlCommand^ cmdDB = gcnew MySqlCommand("select book_id from book_store.books where title ='" + listBox2->Text + "' ;", conData);
+	MySqlDataReader^ myRender0;
+	Int32^ vId;
+	try {
+		conData->Open();
+		myRender0 = cmdDB->ExecuteReader();
+		while (myRender0->Read()) {
+			vId = myRender0->GetInt32("book_id");
+		}
+		conData->Close();
+		return vId;
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+		return -1;
+	}
+}
+Boolean^  MySQL::sendOrder(System::Windows::Forms::ListBox^ listBox2, System::Windows::Forms::ListBox^ listBox1, System::Windows::Forms::ComboBox^ comboBox2) {
+	Int32^ idVal = getIDBookByName(listBox2);
+	Int32^ idOrder = getIdOrder();
+	try {
+		//MessageBox::Show("id book = " + idVal->ToString());
+		//MessageBox::Show("id order = " + idOrder->ToString());
+		//MessageBox::Show("provider name = " + comboBox2->Text);
+		//MessageBox::Show("ampunt= " + listBox1->Text);
+		if (idVal != -1 && idOrder != -1) {
+			try
+			{
+				MySqlCommand^ cmdDB = gcnew MySqlCommand("INSERT INTO `book_store`.`orders_from_provider`(`order_provider_id`,`book_id`,`amount`,`provider`,`order_date`,`order_status`) VALUES('" + idOrder + "' ,'" + idVal + "','" + listBox1->Text + "',''" + comboBox2->Text + "','2020-12-18','active'); ", conData);
+				return true;
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show(ex->Message);
+			}
+
+		}
+	}
+	catch (Exception^ ex) {
+		return false;
+	}
+
+}

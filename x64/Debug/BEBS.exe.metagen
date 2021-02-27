@@ -2,6 +2,7 @@
   BEBS.DiscountControl.resources - Embedded, ContainedInManifestFile, 
   BEBS.HomePage.resources - Embedded, ContainedInManifestFile, 
   BEBS.LogInMenu.resources - Embedded, ContainedInManifestFile, 
+  BEBS.NewOrder.resources - Embedded, ContainedInManifestFile, 
   BEBS.OrdersControl.resources - Embedded, ContainedInManifestFile, 
   BEBS.ProfitControl.resources - Embedded, ContainedInManifestFile, 
   BEBS.RegisterMenu.resources - Embedded, ContainedInManifestFile, 
@@ -31,6 +32,9 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 	hash=None, flags=None
 Assembly Microsoft.VisualC.STLCLR, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
+Class BEBS.NewOrder: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class BEBS.ProfitControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -179,4 +183,18 @@ Class MySQL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     changeVal(String, TextBox, TextBox, TextBox, TextBox): PrivateScope, Public, HideBySig
     setEditVal(MySqlCommand, TextBox, TextBox, TextBox, TextBox): PrivateScope, Public, HideBySig
     editVal(TextBox, TextBox, TextBox, TextBox): PrivateScope, Public, HideBySig
+    setBooksByAmount(MySqlCommand, DataGridView): PrivateScope, Public, HideBySig
+    booksByAmount(DataGridView): PrivateScope, Public, HideBySig
+    setBooksCom(MySqlCommand, ComboBox): PrivateScope, Public, HideBySig
+    booksCom(ComboBox): PrivateScope, Public, HideBySig
+    setBookChange(MySqlCommand, String, ValueType Int32 IsBoxed, TextBox, TextBox, TextBox): PrivateScope, Public, HideBySig
+    bookChange(String, ValueType Int32 IsBoxed, TextBox, TextBox, TextBox): PrivateScope, Public, HideBySig
+    getIDBook(): PrivateScope, Public, HideBySig
+    createBook(TextBox, TextBox): PrivateScope, Public, HideBySig
+    setProviderCom(MySqlCommand, ComboBox): PrivateScope, Public, HideBySig
+    providerCom(ComboBox): PrivateScope, Public, HideBySig
+    getIDBookByName(ListBox): PrivateScope, Public, HideBySig
+    seGetIdOrder(MySqlCommand): PrivateScope, Public, HideBySig
+    getIdOrder(): PrivateScope, Public, HideBySig
+    sendOrder(ListBox, ListBox, ComboBox): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig

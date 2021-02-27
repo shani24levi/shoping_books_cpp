@@ -1,26 +1,6 @@
-﻿  pch.cpp
-C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\Inventory.h(21): warning C4715: 'Inventory::getNumberItems': not all control paths return a value
-  AdminMenu.cpp
-  AssemblyInfo.cpp
-  BEBS.cpp
-  Book.cpp
-  Coustomer.cpp
-  DiscountControl.cpp
-  HomePage.cpp
-  Inventory.cpp
-  Item.cpp
-  LogInMenu.cpp
-  Manager.cpp
-  MySQL.cpp
-  OrdersControl.cpp
-  ProfitControl.cpp
-  RegisterMenu.cpp
-  SalesControl.cpp
-  ShoppingMenu.cpp
-  User.cpp
-  UsersControl.cpp
-C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\UsersControl.cpp(376,19): warning C4101: 'myRender': unreferenced local variable
-C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\UsersControl.cpp(432,21): warning C4101: 'myRender2': unreferenced local variable
-  Generating Code...
+﻿  MySQL.cpp
+C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\MySQL.cpp(821,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\MySQL.cpp(724): warning C4715: 'MySQL::setBookChange': not all control paths return a value
+C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\MySQL.cpp(825): warning C4715: 'MySQL::sendOrder': not all control paths return a value
   AdminMenu.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   BEBS.vcxproj -> C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\x64\Debug\BEBS.exe

@@ -49,7 +49,6 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->DiscountButton = (gcnew System::Windows::Forms::Button());
 	this->OrderButton = (gcnew System::Windows::Forms::Button());
 	this->UsersButton = (gcnew System::Windows::Forms::Button());
-	this->SalesButton = (gcnew System::Windows::Forms::Button());
 	this->ProfitButton = (gcnew System::Windows::Forms::Button());
 	(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomePage))->BeginInit();
 	this->SuspendLayout();
@@ -62,7 +61,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->discount->ForeColor = System::Drawing::Color::White;
 	this->discount->Location = System::Drawing::Point(51, 131);
 	this->discount->Name = L"discount";
-	this->discount->Size = System::Drawing::Size(485, 34);
+	this->discount->Size = System::Drawing::Size(485, 44);
 	this->discount->TabIndex = 29;
 	// 
 	// start
@@ -73,7 +72,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->start->ForeColor = System::Drawing::Color::White;
 	this->start->Location = System::Drawing::Point(53, 244);
 	this->start->Name = L"start";
-	this->start->Size = System::Drawing::Size(485, 34);
+	this->start->Size = System::Drawing::Size(485, 44);
 	this->start->TabIndex = 30;
 	// 
 	// end
@@ -84,7 +83,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->end->ForeColor = System::Drawing::Color::White;
 	this->end->Location = System::Drawing::Point(53, 342);
 	this->end->Name = L"end";
-	this->end->Size = System::Drawing::Size(485, 34);
+	this->end->Size = System::Drawing::Size(485, 44);
 	this->end->TabIndex = 31;
 	// 
 	// label2
@@ -96,7 +95,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->label2->ForeColor = System::Drawing::Color::White;
 	this->label2->Location = System::Drawing::Point(49, 89);
 	this->label2->Name = L"label2";
-	this->label2->Size = System::Drawing::Size(73, 24);
+	this->label2->Size = System::Drawing::Size(103, 33);
 	this->label2->TabIndex = 32;
 	this->label2->Text = L"Discount";
 	// 
@@ -109,7 +108,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->label1->ForeColor = System::Drawing::Color::White;
 	this->label1->Location = System::Drawing::Point(51, 207);
 	this->label1->Name = L"label1";
-	this->label1->Size = System::Drawing::Size(213, 24);
+	this->label1->Size = System::Drawing::Size(284, 33);
 	this->label1->TabIndex = 33;
 	this->label1->Text = L"Date Start :: YYYY-MM-DD";
 	// 
@@ -122,7 +121,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->label3->ForeColor = System::Drawing::Color::White;
 	this->label3->Location = System::Drawing::Point(47, 306);
 	this->label3->Name = L"label3";
-	this->label3->Size = System::Drawing::Size(212, 24);
+	this->label3->Size = System::Drawing::Size(284, 33);
 	this->label3->TabIndex = 34;
 	this->label3->Text = L"Date End ::  YYYY-MM-DD";
 	// 
@@ -193,7 +192,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->id_tet->ForeColor = System::Drawing::Color::White;
 	this->id_tet->Location = System::Drawing::Point(53, 424);
 	this->id_tet->Name = L"id_tet";
-	this->id_tet->Size = System::Drawing::Size(485, 34);
+	this->id_tet->Size = System::Drawing::Size(485, 44);
 	this->id_tet->TabIndex = 40;
 	// 
 	// label4
@@ -205,7 +204,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->label4->ForeColor = System::Drawing::Color::White;
 	this->label4->Location = System::Drawing::Point(47, 388);
 	this->label4->Name = L"label4";
-	this->label4->Size = System::Drawing::Size(24, 24);
+	this->label4->Size = System::Drawing::Size(34, 33);
 	this->label4->TabIndex = 41;
 	this->label4->Text = L"Id";
 	// 
@@ -214,10 +213,10 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->listBox1->BackColor = System::Drawing::Color::Black;
 	this->listBox1->ForeColor = System::Drawing::Color::White;
 	this->listBox1->FormattingEnabled = true;
-	this->listBox1->ItemHeight = 16;
+	this->listBox1->ItemHeight = 24;
 	this->listBox1->Location = System::Drawing::Point(632, 342);
 	this->listBox1->Name = L"listBox1";
-	this->listBox1->Size = System::Drawing::Size(310, 116);
+	this->listBox1->Size = System::Drawing::Size(310, 100);
 	this->listBox1->TabIndex = 42;
 	this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &DiscountControl::listBox1_SelectedIndexChanged);
 	// 
@@ -230,7 +229,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->label6->ForeColor = System::Drawing::Color::White;
 	this->label6->Location = System::Drawing::Point(624, 306);
 	this->label6->Name = L"label6";
-	this->label6->Size = System::Drawing::Size(140, 24);
+	this->label6->Size = System::Drawing::Size(197, 33);
 	this->label6->TabIndex = 43;
 	this->label6->Text = L"Expired Discounts";
 	// 
@@ -243,7 +242,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->label7->ForeColor = System::Drawing::Color::White;
 	this->label7->Location = System::Drawing::Point(628, 89);
 	this->label7->Name = L"label7";
-	this->label7->Size = System::Drawing::Size(138, 24);
+	this->label7->Size = System::Drawing::Size(193, 33);
 	this->label7->TabIndex = 44;
 	this->label7->Text = L"Future  Discounts";
 	// 
@@ -252,10 +251,10 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->listBox2->BackColor = System::Drawing::Color::Black;
 	this->listBox2->ForeColor = System::Drawing::Color::White;
 	this->listBox2->FormattingEnabled = true;
-	this->listBox2->ItemHeight = 16;
+	this->listBox2->ItemHeight = 24;
 	this->listBox2->Location = System::Drawing::Point(628, 172);
 	this->listBox2->Name = L"listBox2";
-	this->listBox2->Size = System::Drawing::Size(310, 116);
+	this->listBox2->Size = System::Drawing::Size(310, 100);
 	this->listBox2->TabIndex = 45;
 	this->listBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &DiscountControl::listBox2_SelectedIndexChanged);
 	// 
@@ -266,7 +265,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->comboBox1->FormattingEnabled = true;
 	this->comboBox1->Location = System::Drawing::Point(628, 131);
 	this->comboBox1->Name = L"comboBox1";
-	this->comboBox1->Size = System::Drawing::Size(310, 24);
+	this->comboBox1->Size = System::Drawing::Size(310, 32);
 	this->comboBox1->TabIndex = 46;
 	this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &DiscountControl::comboBox1_SelectedIndexChanged);
 	// 
@@ -292,9 +291,9 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->DiscountButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 		static_cast<System::Byte>(0)));
 	this->DiscountButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-	this->DiscountButton->Location = System::Drawing::Point(257, 12);
+	this->DiscountButton->Location = System::Drawing::Point(355, 13);
 	this->DiscountButton->Name = L"DiscountButton";
-	this->DiscountButton->Size = System::Drawing::Size(118, 50);
+	this->DiscountButton->Size = System::Drawing::Size(132, 50);
 	this->DiscountButton->TabIndex = 51;
 	this->DiscountButton->Text = L"Discount";
 	this->DiscountButton->UseVisualStyleBackColor = false;
@@ -306,7 +305,7 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->OrderButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 		static_cast<System::Byte>(0)));
 	this->OrderButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-	this->OrderButton->Location = System::Drawing::Point(381, 12);
+	this->OrderButton->Location = System::Drawing::Point(493, 12);
 	this->OrderButton->Name = L"OrderButton";
 	this->OrderButton->Size = System::Drawing::Size(109, 50);
 	this->OrderButton->TabIndex = 50;
@@ -321,28 +320,13 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->UsersButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 		static_cast<System::Byte>(0)));
 	this->UsersButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-	this->UsersButton->Location = System::Drawing::Point(496, 12);
+	this->UsersButton->Location = System::Drawing::Point(608, 12);
 	this->UsersButton->Name = L"UsersButton";
 	this->UsersButton->Size = System::Drawing::Size(93, 50);
 	this->UsersButton->TabIndex = 49;
 	this->UsersButton->Text = L"Users";
 	this->UsersButton->UseVisualStyleBackColor = false;
 	this->UsersButton->Click += gcnew System::EventHandler(this, &DiscountControl::UsersClick);
-	// 
-	// SalesButton
-	// 
-	this->SalesButton->BackColor = System::Drawing::SystemColors::ActiveCaption;
-	this->SalesButton->Cursor = System::Windows::Forms::Cursors::Hand;
-	this->SalesButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-		static_cast<System::Byte>(0)));
-	this->SalesButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-	this->SalesButton->Location = System::Drawing::Point(595, 12);
-	this->SalesButton->Name = L"SalesButton";
-	this->SalesButton->Size = System::Drawing::Size(106, 50);
-	this->SalesButton->TabIndex = 48;
-	this->SalesButton->Text = L"Sales";
-	this->SalesButton->UseVisualStyleBackColor = false;
-	this->SalesButton->Click += gcnew System::EventHandler(this, &DiscountControl::SalesClick);
 	// 
 	// ProfitButton
 	// 
@@ -369,7 +353,6 @@ void BEBS::DiscountControl::InitializeComponent(void)
 	this->Controls->Add(this->DiscountButton);
 	this->Controls->Add(this->OrderButton);
 	this->Controls->Add(this->UsersButton);
-	this->Controls->Add(this->SalesButton);
 	this->Controls->Add(this->ProfitButton);
 	this->Controls->Add(this->comboBox1);
 	this->Controls->Add(this->listBox2);
@@ -487,11 +470,11 @@ System::Void BEBS::DiscountControl::UsersClick(System::Object^ sender, System::E
 	BEBS::UsersControl users;
 	users.ShowDialog();
 }
-System::Void BEBS::DiscountControl::SalesClick(System::Object^ sender, System::EventArgs^ e) {
-	this->~DiscountControl();
-	BEBS::SalesControl sales;
-	sales.ShowDialog();
-}
+//System::Void BEBS::DiscountControl::SalesClick(System::Object^ sender, System::EventArgs^ e) {
+//	this->~DiscountControl();
+//	BEBS::SalesControl sales;
+//	sales.ShowDialog();
+//}
 System::Void BEBS::DiscountControl::ProfitClick(System::Object^ sender, System::EventArgs^ e) {
 	this->~DiscountControl();
 	BEBS::ProfitControl profit;

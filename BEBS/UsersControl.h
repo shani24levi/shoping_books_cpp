@@ -44,9 +44,10 @@ namespace BEBS {
 	private: System::Windows::Forms::Button^ DiscountButton;
 	private: System::Windows::Forms::Button^ OrderButton;
 	private: System::Windows::Forms::Button^ UsersButton;
-	private: System::Windows::Forms::Button^ SalesButton;
+	//private: System::Windows::Forms::Button^ SalesButton;
 	private: System::Windows::Forms::Button^ ProfitButton;
 	private: System::Windows::Forms::TextBox^ textBoxSTA;
+	private: System::Windows::Forms::Label^ label1;
 		   int countList2 = 0;
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -72,7 +73,7 @@ namespace BEBS {
 		System::Void InventoryClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void DiscountClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void ProfitClick(System::Object^ sender, System::EventArgs^ e);
-		System::Void SalesClick(System::Object^ sender, System::EventArgs^ e);
+		//System::Void SalesClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void OrdersClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void HomePageClick(System::Object^ sender, System::EventArgs^ e);
 

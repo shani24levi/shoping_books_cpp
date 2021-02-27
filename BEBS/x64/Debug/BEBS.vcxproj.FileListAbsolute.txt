@@ -23,3 +23,4 @@ C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\x64\Debug\
 C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\x64\Debug\BEBS.UsersControl.resources
 C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\x64\Debug\BEBS.vcxproj.GenerateResource.cache
 C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\x64\Debug\BEBS.vcxproj.CopyComplete
+C:\Users\shani\Desktop\BookShoop-Cpp-master\BookShoop-Cpp-master\BEBS\x64\Debug\BEBS.NewOrder.resources

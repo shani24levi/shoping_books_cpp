@@ -46,7 +46,6 @@ BEBS::ProfitControl::~ProfitControl()
 			this->ProfitButton = (gcnew System::Windows::Forms::Button());
 			this->chart2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->SalesButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomePage))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -158,6 +157,7 @@ BEBS::ProfitControl::~ProfitControl()
 			this->dataGridView1->ShowRowErrors = false;
 			this->dataGridView1->Size = System::Drawing::Size(435, 177);
 			this->dataGridView1->TabIndex = 38;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ProfitControl::dataGridView1_CellContentClick);
 			// 
 			// UpdateInventoryButton
 			// 
@@ -168,7 +168,7 @@ BEBS::ProfitControl::~ProfitControl()
 			this->UpdateInventoryButton->ForeColor = System::Drawing::SystemColors::HighlightText;
 			this->UpdateInventoryButton->Location = System::Drawing::Point(817, 12);
 			this->UpdateInventoryButton->Name = L"UpdateInventoryButton";
-			this->UpdateInventoryButton->Size = System::Drawing::Size(104, 50);
+			this->UpdateInventoryButton->Size = System::Drawing::Size(105, 50);
 			this->UpdateInventoryButton->TabIndex = 64;
 			this->UpdateInventoryButton->Text = L"Update Inventory";
 			this->UpdateInventoryButton->UseVisualStyleBackColor = false;
@@ -181,9 +181,9 @@ BEBS::ProfitControl::~ProfitControl()
 			this->DiscountButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DiscountButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->DiscountButton->Location = System::Drawing::Point(257, 12);
+			this->DiscountButton->Location = System::Drawing::Point(357, 12);
 			this->DiscountButton->Name = L"DiscountButton";
-			this->DiscountButton->Size = System::Drawing::Size(118, 50);
+			this->DiscountButton->Size = System::Drawing::Size(129, 50);
 			this->DiscountButton->TabIndex = 63;
 			this->DiscountButton->Text = L"Discount";
 			this->DiscountButton->UseVisualStyleBackColor = false;
@@ -196,7 +196,7 @@ BEBS::ProfitControl::~ProfitControl()
 			this->OrderButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->OrderButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->OrderButton->Location = System::Drawing::Point(381, 12);
+			this->OrderButton->Location = System::Drawing::Point(493, 12);
 			this->OrderButton->Name = L"OrderButton";
 			this->OrderButton->Size = System::Drawing::Size(109, 50);
 			this->OrderButton->TabIndex = 62;
@@ -211,7 +211,7 @@ BEBS::ProfitControl::~ProfitControl()
 			this->UsersButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->UsersButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->UsersButton->Location = System::Drawing::Point(496, 12);
+			this->UsersButton->Location = System::Drawing::Point(608, 12);
 			this->UsersButton->Name = L"UsersButton";
 			this->UsersButton->Size = System::Drawing::Size(93, 50);
 			this->UsersButton->TabIndex = 61;
@@ -232,6 +232,7 @@ BEBS::ProfitControl::~ProfitControl()
 			this->ProfitButton->TabIndex = 59;
 			this->ProfitButton->Text = L"Profit";
 			this->ProfitButton->UseVisualStyleBackColor = false;
+			this->ProfitButton->Click += gcnew System::EventHandler(this, &ProfitControl::ProfitButton_Click);
 			// 
 			// chart2
 			// 
@@ -266,21 +267,6 @@ BEBS::ProfitControl::~ProfitControl()
 			this->label1->Text = L"BEBS Amounts";
 			this->label1->Click += gcnew System::EventHandler(this, &ProfitControl::label1_Click);
 			// 
-			// SalesButton
-			// 
-			this->SalesButton->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->SalesButton->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->SalesButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->SalesButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->SalesButton->Location = System::Drawing::Point(595, 12);
-			this->SalesButton->Name = L"SalesButton";
-			this->SalesButton->Size = System::Drawing::Size(106, 50);
-			this->SalesButton->TabIndex = 60;
-			this->SalesButton->Text = L"Sales";
-			this->SalesButton->UseVisualStyleBackColor = false;
-			this->SalesButton->Click += gcnew System::EventHandler(this, &ProfitControl::SalesClick);
-			// 
 			// ProfitControl
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -293,7 +279,6 @@ BEBS::ProfitControl::~ProfitControl()
 			this->Controls->Add(this->DiscountButton);
 			this->Controls->Add(this->OrderButton);
 			this->Controls->Add(this->UsersButton);
-			this->Controls->Add(this->SalesButton);
 			this->Controls->Add(this->ProfitButton);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->HomePage);
@@ -360,11 +345,11 @@ BEBS::ProfitControl::~ProfitControl()
 		BEBS::UsersControl users;
 		users.ShowDialog();
 	}
-	System::Void BEBS::ProfitControl::SalesClick(System::Object^ sender, System::EventArgs^ e) {
-		this->~ProfitControl();
-		BEBS::SalesControl sales;
-		sales.ShowDialog();
-	}
+	//System::Void BEBS::ProfitControl::SalesClick(System::Object^ sender, System::EventArgs^ e) {
+	//	this->~ProfitControl();
+	//	BEBS::SalesControl sales;
+	//	sales.ShowDialog();
+	//}
 	System::Void BEBS::ProfitControl::OrdersClick(System::Object^ sender, System::EventArgs^ e) {
 		this->~ProfitControl();
 		BEBS::OrdersControl order;

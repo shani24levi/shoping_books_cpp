@@ -15,8 +15,9 @@ namespace BEBS {
 		~OrdersControl();
 	private:  
 		Form^ lastForm;
+	private: System::Windows::Forms::Button^ add;
 
-		System::Windows::Forms::Button^ weekly;
+
 		System::Windows::Forms::TextBox^ provider_txt;
 		System::Windows::Forms::ComboBox^ comboBox1;
 		System::Windows::Forms::Label^ order_id;
@@ -38,10 +39,13 @@ namespace BEBS {
 		System::Windows::Forms::Button^ DiscountButton;
 		System::Windows::Forms::Button^ OrderButton;
 		System::Windows::Forms::Button^ UsersButton;
-		System::Windows::Forms::Button^ SalesButton;
+		//System::Windows::Forms::Button^ SalesButton;
 		System::Windows::Forms::Button^ ProfitButton;
 		System::ComponentModel::Container^ components;
-		String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
+
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::DataGridView^ booksTable;
+		   String^ con = L"datasource=localhost; port=3306; username=root; password=shanilevi24";
 #pragma region Windows Form Designer generated code
 	
 		void InitializeComponent(void);
@@ -50,6 +54,7 @@ namespace BEBS {
 		System::Void label4_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
 		Void fillCom(void);
+		Void fillBooks(void);
 		System::Void Update_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void weekly_Click(System::Object^ sender, System::EventArgs^ e);
@@ -58,12 +63,15 @@ namespace BEBS {
 		System::Void InventoryClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void DiscountClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void UsersClick(System::Object^ sender, System::EventArgs^ e);
-		System::Void SalesClick(System::Object^ sender, System::EventArgs^ e);
+		//System::Void SalesClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void ProfitClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void HomePageClick(System::Object^ sender, System::EventArgs^ e);
 
 
-
+	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void booksTable_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	}
 	};
 }
 

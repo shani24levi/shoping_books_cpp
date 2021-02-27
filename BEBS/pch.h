@@ -16,6 +16,7 @@ using namespace System::Drawing;
 using namespace System::Text::RegularExpressions;
 typedef String^ strP;
 #include <cliext/map>
+#include "NewOrder.h"
 #include "ProfitControl.h"
 #include "OrdersControl.h"
 #include "SalesControl.h"

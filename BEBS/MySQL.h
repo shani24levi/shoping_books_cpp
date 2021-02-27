@@ -91,6 +91,28 @@
 
 		Boolean^ setEditVal(MySqlCommand^ cmdDB, System::Windows::Forms::TextBox^ id_tet, System::Windows::Forms::TextBox^ discount, System::Windows::Forms::TextBox^ start, System::Windows::Forms::TextBox^ end);
 		Boolean^ editVal(System::Windows::Forms::TextBox^ id_tet, System::Windows::Forms::TextBox^ discount, System::Windows::Forms::TextBox^ start, System::Windows::Forms::TextBox^ end);
+		
+		void setBooksByAmount(MySqlCommand^ cmdDB, System::Windows::Forms::DataGridView^ booksTable);
+		void booksByAmount(System::Windows::Forms::DataGridView^ booksTable);
+		
+		void setBooksCom(MySqlCommand^ cmdDB, System::Windows::Forms::ComboBox^ comboBox1);
+		void booksCom(System::Windows::Forms::ComboBox^ comboBox1);
+
+		Int32^ setBookChange(MySqlCommand^ cmdDB, String^ comboVal, Int32^ idBook, System::Windows::Forms::TextBox^ bookName, System::Windows::Forms::TextBox^ auther, System::Windows::Forms::TextBox^ amount);
+		Int32^ bookChange(String^ comboVal, Int32^ idBook, System::Windows::Forms::TextBox^ bookName, System::Windows::Forms::TextBox^ auther, System::Windows::Forms::TextBox^ amount);
+	
+		Int32^ getIDBook();
+		void createBook(System::Windows::Forms::TextBox^ bookName, System::Windows::Forms::TextBox^ auther);
+
+		void setProviderCom(MySqlCommand^ cmdDB, System::Windows::Forms::ComboBox^ comboBox2);
+		void providerCom(System::Windows::Forms::ComboBox^ comboBox2);
+		
+		Int32^ MySQL::getIDBookByName(System::Windows::Forms::ListBox^ listBox2);
+
+		Int32^ seGetIdOrder(MySqlCommand^ cmdDB);
+		Int32^ getIdOrder();
+
+		Boolean^ sendOrder(System::Windows::Forms::ListBox^ listBox2, System::Windows::Forms::ListBox^ listBox1, System::Windows::Forms::ComboBox^ comboBox2);
 
 	protected:
 		~MySQL();
