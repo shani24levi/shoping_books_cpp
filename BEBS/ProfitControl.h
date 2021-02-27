@@ -29,17 +29,12 @@ namespace BEBS {
 
 		System::Windows::Forms::Button^ ProfitButton;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart2;
-	private: System::Windows::Forms::Label^ label1;
-	//private: System::Windows::Forms::Button^ SalesButton;
-
 		   System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 
 		void InitializeComponent(void);
 		Void fillAll(void);
-		Void fillAll2(void);
-
 #pragma endregion
 	private: 
 		System::Void weeklyClick(System::Object^ sender, System::EventArgs^ e);
@@ -48,19 +43,8 @@ namespace BEBS {
 		System::Void InventoryClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void DiscountClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void UsersClick(System::Object^ sender, System::EventArgs^ e);
-		//System::Void SalesClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void OrdersClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void HomePageClick(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void chart2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void ProfitButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
 	};
 }

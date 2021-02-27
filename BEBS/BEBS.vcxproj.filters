@@ -56,9 +56,6 @@
     <ClInclude Include="RegisterMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SalesControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ShoppingMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -75,9 +72,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HomePage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NewOrder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -127,9 +121,6 @@
     <ClCompile Include="RegisterMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SalesControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ShoppingMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -140,9 +131,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NewOrder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

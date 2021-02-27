@@ -1,7 +1,7 @@
 DROP DATABASE  IF EXISTS book_store ;
 CREATE DATABASE IF NOT EXISTS book_store ;
 USE book_store;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- for login
 CREATE TABLE users (
@@ -19,13 +19,15 @@ CREATE TABLE users (
 CREATE TABLE discounts (
     discount_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     percent SMALLINT UNSIGNED NOT NULL,
+    user_id_discount VARCHAR(5) DEFAULT "all",
     date_from DATE NOT NULL,
     date_until DATE NOT NULL,
+    active_discount boolean DEFAULT true ,
     PRIMARY KEY (discount_id)
 );
 CREATE TABLE books (
     book_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    
+	active_item boolean DEFAULT true ,
     title VARCHAR(200) NOT NULL,
     pages SMALLINT UNSIGNED NOT NULL,
     section VARCHAR(100) NOT NULL,
@@ -48,25 +50,24 @@ CREATE TABLE shoping_carts (
 
 CREATE TABLE book_list (
     book_list_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    shoping_cart_id SMALLINT UNSIGNED NOT NULL,
+    purchase_id SMALLINT UNSIGNED NOT NULL,
     book_id SMALLINT UNSIGNED NOT NULL,
-    user_id SMALLINT UNSIGNED NOT NULL,
-    done VARCHAR(10) DEFAULT 'no',
+    price VARCHAR(100) NOT NULL,
+    amount  SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (book_list_id),
-    FOREIGN KEY (shoping_cart_id)
-	REFERENCES shoping_carts (shoping_cart_id),
+    FOREIGN KEY (purchase_id)
+	REFERENCES purchases (purchase_id),
     FOREIGN KEY (book_id)
-	REFERENCES books (book_id),
-    FOREIGN KEY (user_id)
-	REFERENCES users (user_id)
+	REFERENCES books (book_id)
 );
 
 CREATE TABLE purchases (
-    purchase_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    user_id SMALLINT UNSIGNED NOT NULL,
-    payment_method VARCHAR(45),
+    purchase_id SMALLINT UNSIGNED AUTO_INCREMENT,
+    cart_id VARCHAR(4) NOT NULL,
+    user_id VARCHAR(10) NOT NULL,
+    payment_method VARCHAR(45) NOT NULL,
     pyment_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    price_paid SMALLINT UNSIGNED NOT NULL,
+    price_paid VARCHAR(45) NOT NULL,
     PRIMARY KEY (purchase_id)
 );
 CREATE TABLE orders_from_provider (
@@ -81,35 +82,6 @@ CREATE TABLE orders_from_provider (
 	REFERENCES books (book_id)
 );
 
--- CREATE TABLE customers
--- (
--- customer_id smallint unsigned NOT NULL AUTO_INCREMENT,
--- is_member boolean NOT NULL, 
--- user_id smallint unsigned,
--- PRIMARY KEY (customer_id),
--- FOREIGN KEY (user_id) REFERENCES users (user_id)
--- );
-
--- CREATE TABLE authors
--- (
--- author_id smallint unsigned NOT NULL AUTO_INCREMENT,
--- first_name varchar(45),
--- last_name varchar(45),
--- PRIMARY KEY (author_id)
--- );
-
-
-
-
--- CREATE TABLE book_list -- for user orders 
--- (
--- book_list_id smallint unsigned NOT NULL AUTO_INCREMENT,
--- book_id smallint unsigned NOT NULL,
--- customer_id smallint unsigned NOT NULL,
--- PRIMARY KEY (book_list_id),
--- FOREIGN KEY (book_id) REFERENCES books (book_id),
--- FOREIGN KEY (customer_id) REFERENCES customers (customer_id)
--- );
 
 
 

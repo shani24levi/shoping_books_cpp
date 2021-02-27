@@ -1,10 +1,8 @@
 #include "pch.h"
 
-
 BEBS::ShoppingMenu::ShoppingMenu(void)
 {
 	user = gcnew Coustomer();
-
 	InitializeComponent();
 	this->UserName->Text = L"LogIn";
 	this->getItemR();
@@ -15,15 +13,15 @@ BEBS::ShoppingMenu::ShoppingMenu(Coustomer^ user)
 	this->user = user;
 	InitializeComponent();
 	this->UserName->Text = user->getName();
-	this->getItemR();
+	getItemR();
 
 }
 
 System::Void BEBS::ShoppingMenu::ArrowL_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->getItemL();
+	getItemL();
 }
 System::Void BEBS::ShoppingMenu::ArrowR_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->getItemR();
+	getItemR();
 }
 
 BEBS::ShoppingMenu::~ShoppingMenu()
@@ -33,80 +31,40 @@ BEBS::ShoppingMenu::~ShoppingMenu()
 	if (user)
 		delete user;
 }
-void BEBS::ShoppingMenu::getItemR(void)
+void BEBS::ShoppingMenu::setPic(System::Windows::Forms::PictureBox^ pic, System::Windows::Forms::Label^ title, System::Windows::Forms::Label^ price)
 {
 	Book^ book = store.getBook();
 	if (book == nullptr)
 		return;
-	this->item1->BackgroundImage = Image::FromFile(book->getImg());
-	this->titleItem1->Text = book->getTitle();
-	this->PriceItem1->Text = book->getPrice();
-	this->item1->Name = book->getBookId();
-	
-	book = store.getBook();
-	if (book == nullptr)
-		return;
-	this->item2->BackgroundImage = Image::FromFile(book->getImg());
-	this->PriceItem2->Text = book->getPrice();
-	this->titleItem2->Text = book->getTitle();
-	this->item2->Name = book->getBookId();
-	
-	book = store.getBook();
-	if (book == nullptr)
-		return;
-	this->item3->BackgroundImage = Image::FromFile(book->getImg());
-	this->PriceItem3->Text = book->getPrice();
-	this->titleItem3->Text = book->getTitle();
-	this->item3->Name = book->getBookId();
-	
-	book = store.getBook();
-	if (book == nullptr)
-		return;
-	this->item4->BackgroundImage = Image::FromFile(book->getImg());
-	this->PriceItem4->Text = book->getPrice();
-	this->titleItem4->Text = book->getTitle();
-	this->item4->Name = book->getBookId();
-	
+	pic->BackgroundImage = Image::FromFile(book->getImg());
+	title->Text = book->getTitle();
+	price->Text = book->getPrice();
+	pic->Name = book->getBookId();
 }
 
-
+void BEBS::ShoppingMenu::getItemR(void)
+{
+	int s = store.getNumberItems();
+	if (s > 0)
+	{
+		setPic(item1, titleItem1, PriceItem1);
+		if (s > 1)
+		{
+			setPic(item2, titleItem2, PriceItem2);
+			if (s > 2)
+			{
+				setPic(item3, titleItem3, PriceItem3);
+				if (s > 3)
+					setPic(item4, titleItem4, PriceItem4);
+			}
+		}
+	}
+}
 
 void BEBS::ShoppingMenu::getItemL(void)
 {
 	store.BookLIndex();
-	Book^ book = store.getBook();
-	if (book == nullptr)
-		return;
-	this->item1->BackgroundImage = Image::FromFile(book->getImg());
-	
-	this->titleItem1->Text = book->getTitle();
-	this->PriceItem1->Text = book->getPrice();
-	this->item1->Name = book->getBookId();
-
-	book = store.getBook();
-	if (book == nullptr)
-		return;
-	this->item2->BackgroundImage = Image::FromFile(book->getImg());
-	this->PriceItem2->Text = book->getPrice();
-	this->titleItem2->Text = book->getTitle();
-	this->item2->Name = book->getBookId();
-
-	book = store.getBook();
-	if (book == nullptr)
-		return;
-	this->item3->BackgroundImage = Image::FromFile(book->getImg());
-	this->PriceItem3->Text = book->getPrice();
-	this->titleItem3->Text = book->getTitle();
-	this->item3->Name = book->getBookId();
-
-	book = store.getBook();
-	if (book == nullptr)
-		return;
-	this->item4->BackgroundImage = Image::FromFile(book->getImg());
-	this->PriceItem4->Text = book->getPrice();
-	this->titleItem4->Text = book->getTitle();
-	this->item4->Name = book->getBookId();
-
+	getItemR();
 }
 
 
@@ -169,7 +127,6 @@ void BEBS::ShoppingMenu::InitializeComponent(void)
 	this->TextSearch->Name = L"TextSearch";
 	this->TextSearch->Size = System::Drawing::Size(520, 40);
 	this->TextSearch->TabIndex = 4;
-	this->TextSearch->TextChanged += gcnew System::EventHandler(this, &ShoppingMenu::TextSearch_TextChanged);
 	// 
 	// CartIcon
 	// 
@@ -529,7 +486,7 @@ void BEBS::ShoppingMenu::InitializeComponent(void)
 	this->Invoice->Name = L"Invoice";
 	this->Invoice->Size = System::Drawing::Size(249, 148);
 	this->Invoice->TabIndex = 43;
-	this->Invoice->SelectedIndexChanged += gcnew System::EventHandler(this, &ShoppingMenu::listBox1_SelectedIndexChanged);
+	this->Invoice->SelectedIndexChanged += gcnew System::EventHandler(this, &ShoppingMenu::Invoice_SelectedIndexChanged);
 	// 
 	// totalPay
 	// 
@@ -633,6 +590,11 @@ System::Void BEBS::ShoppingMenu::pictureBox1_Click(System::Object^ sender, Syste
 
 System::Void BEBS::ShoppingMenu::PayBillClick(System::Object^ sender, System::EventArgs^ e)
 {
+	if (totalPay->Text == nullptr)
+		return;
+	MySQL db;
+	int idP=db.insertPurchase(cartId, user->getId(),"Cash", totalPay->Text);
+	user->insertBookList(idP, Invoice);;
 	this->~ShoppingMenu();
 	BEBS::HomePage HomePage;
 	HomePage.ShowDialog();

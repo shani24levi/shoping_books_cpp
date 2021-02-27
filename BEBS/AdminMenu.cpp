@@ -8,6 +8,8 @@ BEBS::AdminMenu::AdminMenu(void)
 
 }
 
+
+
 BEBS::AdminMenu::~AdminMenu()
 	{
 		if (components)
@@ -58,7 +60,7 @@ BEBS::AdminMenu::~AdminMenu()
 			static_cast<System::Byte>(0)));
 		this->listBox->ForeColor = System::Drawing::Color::White;
 		this->listBox->FormattingEnabled = true;
-		this->listBox->ItemHeight = 30;
+		this->listBox->ItemHeight = 22;
 		this->listBox->Location = System::Drawing::Point(749, 117);
 		this->listBox->Name = L"listBox";
 		this->listBox->Size = System::Drawing::Size(241, 334);
@@ -85,7 +87,7 @@ BEBS::AdminMenu::~AdminMenu()
 			static_cast<System::Byte>(0)));
 		this->title->Location = System::Drawing::Point(28, 291);
 		this->title->Name = L"title";
-		this->title->Size = System::Drawing::Size(66, 29);
+		this->title->Size = System::Drawing::Size(46, 20);
 		this->title->TabIndex = 3;
 		this->title->Text = L"Title";
 		// 
@@ -97,7 +99,7 @@ BEBS::AdminMenu::~AdminMenu()
 			static_cast<System::Byte>(0)));
 		this->Price->Location = System::Drawing::Point(28, 105);
 		this->Price->Name = L"Price";
-		this->Price->Size = System::Drawing::Size(74, 29);
+		this->Price->Size = System::Drawing::Size(53, 20);
 		this->Price->TabIndex = 4;
 		this->Price->Text = L"Price";
 		// 
@@ -109,7 +111,7 @@ BEBS::AdminMenu::~AdminMenu()
 			static_cast<System::Byte>(0)));
 		this->Section->Location = System::Drawing::Point(257, 105);
 		this->Section->Name = L"Section";
-		this->Section->Size = System::Drawing::Size(101, 29);
+		this->Section->Size = System::Drawing::Size(72, 20);
 		this->Section->TabIndex = 5;
 		this->Section->Text = L"Section";
 		// 
@@ -121,7 +123,7 @@ BEBS::AdminMenu::~AdminMenu()
 			static_cast<System::Byte>(0)));
 		this->Amount->Location = System::Drawing::Point(28, 195);
 		this->Amount->Name = L"Amount";
-		this->Amount->Size = System::Drawing::Size(100, 29);
+		this->Amount->Size = System::Drawing::Size(72, 20);
 		this->Amount->TabIndex = 6;
 		this->Amount->Text = L"Amount";
 		// 
@@ -133,7 +135,7 @@ BEBS::AdminMenu::~AdminMenu()
 			static_cast<System::Byte>(0)));
 		this->Info->Location = System::Drawing::Point(496, 316);
 		this->Info->Name = L"Info";
-		this->Info->Size = System::Drawing::Size(56, 29);
+		this->Info->Size = System::Drawing::Size(40, 20);
 		this->Info->TabIndex = 7;
 		this->Info->Text = L"Info";
 		// 
@@ -204,7 +206,7 @@ BEBS::AdminMenu::~AdminMenu()
 		this->ProfitButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		this->ProfitButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-		this->ProfitButton->Location = System::Drawing::Point(708, 12);
+		this->ProfitButton->Location = System::Drawing::Point(596, 12);
 		this->ProfitButton->Name = L"ProfitButton";
 		this->ProfitButton->Size = System::Drawing::Size(104, 50);
 		this->ProfitButton->TabIndex = 15;
@@ -219,7 +221,7 @@ BEBS::AdminMenu::~AdminMenu()
 		this->UsersButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		this->UsersButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-		this->UsersButton->Location = System::Drawing::Point(609, 12);
+		this->UsersButton->Location = System::Drawing::Point(497, 12);
 		this->UsersButton->Name = L"UsersButton";
 		this->UsersButton->Size = System::Drawing::Size(93, 50);
 		this->UsersButton->TabIndex = 17;
@@ -234,7 +236,7 @@ BEBS::AdminMenu::~AdminMenu()
 		this->OrderButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		this->OrderButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-		this->OrderButton->Location = System::Drawing::Point(494, 12);
+		this->OrderButton->Location = System::Drawing::Point(382, 12);
 		this->OrderButton->Name = L"OrderButton";
 		this->OrderButton->Size = System::Drawing::Size(109, 50);
 		this->OrderButton->TabIndex = 18;
@@ -277,9 +279,9 @@ BEBS::AdminMenu::~AdminMenu()
 		this->DiscountButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		this->DiscountButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-		this->DiscountButton->Location = System::Drawing::Point(349, 12);
+		this->DiscountButton->Location = System::Drawing::Point(257, 12);
 		this->DiscountButton->Name = L"DiscountButton";
-		this->DiscountButton->Size = System::Drawing::Size(139, 50);
+		this->DiscountButton->Size = System::Drawing::Size(118, 50);
 		this->DiscountButton->TabIndex = 22;
 		this->DiscountButton->Text = L"Discount";
 		this->DiscountButton->UseVisualStyleBackColor = false;
@@ -305,7 +307,7 @@ BEBS::AdminMenu::~AdminMenu()
 			static_cast<System::Byte>(0)));
 		this->label2->Location = System::Drawing::Point(28, 387);
 		this->label2->Name = L"label2";
-		this->label2->Size = System::Drawing::Size(87, 29);
+		this->label2->Size = System::Drawing::Size(61, 20);
 		this->label2->TabIndex = 25;
 		this->label2->Text = L"Pages";
 		// 
@@ -317,7 +319,7 @@ BEBS::AdminMenu::~AdminMenu()
 			static_cast<System::Byte>(0)));
 		this->label3->Location = System::Drawing::Point(257, 195);
 		this->label3->Name = L"label3";
-		this->label3->Size = System::Drawing::Size(88, 29);
+		this->label3->Size = System::Drawing::Size(64, 20);
 		this->label3->TabIndex = 26;
 		this->label3->Text = L"Author";
 		// 
@@ -353,7 +355,7 @@ BEBS::AdminMenu::~AdminMenu()
 			static_cast<System::Byte>(0)));
 		this->label4->Location = System::Drawing::Point(257, 291);
 		this->label4->Name = L"label4";
-		this->label4->Size = System::Drawing::Size(67, 29);
+		this->label4->Size = System::Drawing::Size(49, 20);
 		this->label4->TabIndex = 30;
 		this->label4->Text = L"Date";
 		// 
@@ -391,7 +393,7 @@ BEBS::AdminMenu::~AdminMenu()
 		this->UpdateInventoryButton->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		this->UpdateInventoryButton->ForeColor = System::Drawing::SystemColors::HighlightText;
-		this->UpdateInventoryButton->Location = System::Drawing::Point(818, 12);
+		this->UpdateInventoryButton->Location = System::Drawing::Point(706, 12);
 		this->UpdateInventoryButton->Name = L"UpdateInventoryButton";
 		this->UpdateInventoryButton->Size = System::Drawing::Size(104, 50);
 		this->UpdateInventoryButton->TabIndex = 40;
@@ -438,10 +440,6 @@ BEBS::AdminMenu::~AdminMenu()
 		this->Name = L"AdminMenu";
 		this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 		this->Text = L"AdminMenu";
-		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->img))->EndInit();
-		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomePage))->EndInit();
-		this->ResumeLayout(false);
-		this->PerformLayout();
 
 	}
 #pragma endregion
@@ -462,11 +460,7 @@ System::Void BEBS::AdminMenu::UsersClick(System::Object^ sender, System::EventAr
 	BEBS::UsersControl users;
 	users.ShowDialog();
 }
-//System::Void BEBS::AdminMenu::SalesClick(System::Object^ sender, System::EventArgs^ e) {
-//	this->~AdminMenu();
-//	BEBS::SalesControl sales;
-//	sales.ShowDialog();
-//}
+
 System::Void BEBS::AdminMenu::ProfitClick(System::Object^ sender, System::EventArgs^ e) {
 	this->~AdminMenu();
 	BEBS::ProfitControl profit;
@@ -477,8 +471,6 @@ System::Void BEBS::AdminMenu::HomePageClick(System::Object^ sender, System::Even
 	BEBS::HomePage HomePage;
 	HomePage.ShowDialog();
 }
-
-
 
 System::Void BEBS::AdminMenu::listBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	Book^ b = store.getBookByIndex(listBox->SelectedIndex);
@@ -525,7 +517,6 @@ System::Void BEBS::AdminMenu::saveClick(System::Object^ sender, System::EventArg
 	MySQL db;
 	strP imgL = sec_txt->Text + title_txt->Name + System::IO::Path::GetExtension(img->ImageLocation);
 	this->author_txt->Text =  imgL;
-
 	db.createNewBook(title_txt->Text, pag_txt->Text, sec_txt->Text, price_txt->Text,
 		amount_txt->Text, info_txt->Text, imgL, author_txt->Text);
 	img->Image->Save(itemPath + imgL);

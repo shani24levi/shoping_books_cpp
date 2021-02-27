@@ -1,35 +1,28 @@
 #pragma once
 
 namespace BEBS {
-
-
 	public ref class AdminMenu : public System::Windows::Forms::Form
 	{
 	public:
 		AdminMenu(void);
-
 	protected:
 		~AdminMenu();
-
 	private:
 		Inventory store;
 		String^ itemPath = ("Image\\books\\");
 		System::Windows::Forms::ListBox^ listBox;
 		System::Windows::Forms::PictureBox^ img;
-
 		System::Windows::Forms::Label^ title;
 		System::Windows::Forms::Label^ Price;
 		System::Windows::Forms::Label^ Section;
 		System::Windows::Forms::Label^ Amount;
 		System::Windows::Forms::Label^ Info;
-
 		System::Windows::Forms::TextBox^ price_txt;
 		System::Windows::Forms::TextBox^ sec_txt;
 		System::Windows::Forms::TextBox^ amount_txt;
 		System::Windows::Forms::TextBox^ info_txt;
 		System::Windows::Forms::TextBox^ title_txt;
 		System::Windows::Forms::Button^ ProfitButton;
-		//System::Windows::Forms::Button^ SalesButton;
 		System::Windows::Forms::Button^ UsersButton;
 		System::Windows::Forms::Button^ OrderButton;
 		System::Windows::Forms::Button^ SAVE;
@@ -47,18 +40,13 @@ namespace BEBS {
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
+		/* Initialize Component */
 		void InitializeComponent();
+		/* fill List Box in table */
 		Void fillListBox(void);
 		
-
-
 #pragma endregion
 	private:
-		//image text -> add / / image//books//
 		System::Void listBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
 		System::Void saveClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void Update_Click(System::Object^ sender, System::EventArgs^ e);
@@ -66,7 +54,6 @@ namespace BEBS {
 		System::Void DiscountClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void OrdersClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void UsersClick(System::Object^ sender, System::EventArgs^ e);
-		//System::Void SalesClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void ProfitClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void HomePageClick(System::Object^ sender, System::EventArgs^ e);
 		System::Void itemImageClick(System::Object^ sender, System::EventArgs^ e);
