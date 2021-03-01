@@ -37,8 +37,8 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 	System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
 	System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-	this->add = (gcnew System::Windows::Forms::Button());
-	this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+	this->addNewOrder = (gcnew System::Windows::Forms::Button());
+	this->listBook = (gcnew System::Windows::Forms::ComboBox());
 	this->order_id = (gcnew System::Windows::Forms::Label());
 	this->label1 = (gcnew System::Windows::Forms::Label());
 	this->amount_txt = (gcnew System::Windows::Forms::TextBox());
@@ -59,33 +59,33 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chartBookAmount))->BeginInit();
 	this->SuspendLayout();
 	// 
-	// add
+	// addNewOrder
 	// 
-	this->add->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+	this->addNewOrder->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 		static_cast<System::Int32>(static_cast<System::Byte>(192)));
-	this->add->Cursor = System::Windows::Forms::Cursors::Hand;
-	this->add->FlatAppearance->BorderColor = System::Drawing::Color::White;
-	this->add->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-	this->add->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+	this->addNewOrder->Cursor = System::Windows::Forms::Cursors::Hand;
+	this->addNewOrder->FlatAppearance->BorderColor = System::Drawing::Color::White;
+	this->addNewOrder->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+	this->addNewOrder->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 		static_cast<System::Byte>(0)));
-	this->add->ForeColor = System::Drawing::Color::White;
-	this->add->Location = System::Drawing::Point(110, 450);
-	this->add->Name = L"add";
-	this->add->Size = System::Drawing::Size(173, 50);
-	this->add->TabIndex = 34;
-	this->add->Text = L"Add new order";
-	this->add->UseVisualStyleBackColor = false;
-	this->add->Click += gcnew System::EventHandler(this, &OrdersControl::weekly_Click);
+	this->addNewOrder->ForeColor = System::Drawing::Color::White;
+	this->addNewOrder->Location = System::Drawing::Point(110, 450);
+	this->addNewOrder->Name = L"addNewOrder";
+	this->addNewOrder->Size = System::Drawing::Size(173, 50);
+	this->addNewOrder->TabIndex = 34;
+	this->addNewOrder->Text = L"Add new order";
+	this->addNewOrder->UseVisualStyleBackColor = false;
+	this->addNewOrder->Click += gcnew System::EventHandler(this, &OrdersControl::addNewOrder_Click);
 	// 
-	// comboBox1
+	// listBook
 	// 
-	this->comboBox1->BackColor = System::Drawing::Color::Black;
-	this->comboBox1->ForeColor = System::Drawing::Color::White;
-	this->comboBox1->FormattingEnabled = true;
-	this->comboBox1->Location = System::Drawing::Point(104, 232);
-	this->comboBox1->Name = L"comboBox1";
-	this->comboBox1->Size = System::Drawing::Size(280, 32);
-	this->comboBox1->TabIndex = 36;
+	this->listBook->BackColor = System::Drawing::Color::Black;
+	this->listBook->ForeColor = System::Drawing::Color::White;
+	this->listBook->FormattingEnabled = true;
+	this->listBook->Location = System::Drawing::Point(104, 232);
+	this->listBook->Name = L"listBook";
+	this->listBook->Size = System::Drawing::Size(280, 24);
+	this->listBook->TabIndex = 36;
 	// 
 	// order_id
 	// 
@@ -96,7 +96,7 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->order_id->ForeColor = System::Drawing::Color::White;
 	this->order_id->Location = System::Drawing::Point(101, 200);
 	this->order_id->Name = L"order_id";
-	this->order_id->Size = System::Drawing::Size(107, 29);
+	this->order_id->Size = System::Drawing::Size(80, 22);
 	this->order_id->TabIndex = 37;
 	this->order_id->Text = L"Book Title";
 	// 
@@ -109,7 +109,7 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->label1->ForeColor = System::Drawing::Color::White;
 	this->label1->Location = System::Drawing::Point(101, 111);
 	this->label1->Name = L"label1";
-	this->label1->Size = System::Drawing::Size(93, 29);
+	this->label1->Size = System::Drawing::Size(69, 22);
 	this->label1->TabIndex = 41;
 	this->label1->Text = L"Provider";
 	// 
@@ -121,7 +121,7 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->amount_txt->ForeColor = System::Drawing::Color::White;
 	this->amount_txt->Location = System::Drawing::Point(110, 325);
 	this->amount_txt->Name = L"amount_txt";
-	this->amount_txt->Size = System::Drawing::Size(280, 44);
+	this->amount_txt->Size = System::Drawing::Size(280, 34);
 	this->amount_txt->TabIndex = 45;
 	// 
 	// label6
@@ -133,7 +133,7 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->label6->ForeColor = System::Drawing::Color::White;
 	this->label6->Location = System::Drawing::Point(106, 284);
 	this->label6->Name = L"label6";
-	this->label6->Size = System::Drawing::Size(88, 29);
+	this->label6->Size = System::Drawing::Size(64, 22);
 	this->label6->TabIndex = 49;
 	this->label6->Text = L"Amount";
 	// 
@@ -230,7 +230,7 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->comboBox2->FormattingEnabled = true;
 	this->comboBox2->Location = System::Drawing::Point(104, 147);
 	this->comboBox2->Name = L"comboBox2";
-	this->comboBox2->Size = System::Drawing::Size(280, 32);
+	this->comboBox2->Size = System::Drawing::Size(280, 24);
 	this->comboBox2->TabIndex = 59;
 	// 
 	// OrderList
@@ -238,8 +238,10 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->OrderList->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 		| System::Windows::Forms::AnchorStyles::Left)
 		| System::Windows::Forms::AnchorStyles::Right));
+	this->OrderList->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+	this->OrderList->BackgroundColor = System::Drawing::Color::White;
 	this->OrderList->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-	this->OrderList->Location = System::Drawing::Point(439, 120);
+	this->OrderList->Location = System::Drawing::Point(462, 120);
 	this->OrderList->Name = L"OrderList";
 	this->OrderList->ReadOnly = true;
 	this->OrderList->RowHeadersWidth = 100;
@@ -254,11 +256,11 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->OrderListLabel->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 		static_cast<System::Byte>(0)));
 	this->OrderListLabel->ForeColor = System::Drawing::Color::White;
-	this->OrderListLabel->Location = System::Drawing::Point(435, 95);
+	this->OrderListLabel->Location = System::Drawing::Point(458, 95);
 	this->OrderListLabel->Name = L"OrderListLabel";
-	this->OrderListLabel->Size = System::Drawing::Size(102, 29);
+	this->OrderListLabel->Size = System::Drawing::Size(80, 22);
 	this->OrderListLabel->TabIndex = 68;
-	this->OrderListLabel->Text = L"OrderList";
+	this->OrderListLabel->Text = L"Order List";
 	// 
 	// labelBookAmount
 	// 
@@ -267,9 +269,9 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->labelBookAmount->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 		static_cast<System::Byte>(0)));
 	this->labelBookAmount->ForeColor = System::Drawing::Color::White;
-	this->labelBookAmount->Location = System::Drawing::Point(435, 284);
+	this->labelBookAmount->Location = System::Drawing::Point(458, 284);
 	this->labelBookAmount->Name = L"labelBookAmount";
-	this->labelBookAmount->Size = System::Drawing::Size(255, 29);
+	this->labelBookAmount->Size = System::Drawing::Size(190, 22);
 	this->labelBookAmount->TabIndex = 69;
 	this->labelBookAmount->Text = L"Current Book In The Shop";
 	// 
@@ -282,7 +284,7 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->chartBookAmount->ChartAreas->Add(chartArea2);
 	legend2->Name = L"Legend1";
 	this->chartBookAmount->Legends->Add(legend2);
-	this->chartBookAmount->Location = System::Drawing::Point(439, 309);
+	this->chartBookAmount->Location = System::Drawing::Point(462, 309);
 	this->chartBookAmount->Name = L"chartBookAmount";
 	series2->ChartArea = L"ChartArea1";
 	series2->Color = System::Drawing::Color::MidnightBlue;
@@ -290,7 +292,7 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	series2->Name = L"B";
 	series2->YValuesPerPoint = 2;
 	this->chartBookAmount->Series->Add(series2);
-	this->chartBookAmount->Size = System::Drawing::Size(650, 236);
+	this->chartBookAmount->Size = System::Drawing::Size(502, 236);
 	this->chartBookAmount->TabIndex = 70;
 	this->chartBookAmount->Text = L"chart2";
 	// 
@@ -315,8 +317,8 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->Controls->Add(this->amount_txt);
 	this->Controls->Add(this->label1);
 	this->Controls->Add(this->order_id);
-	this->Controls->Add(this->comboBox1);
-	this->Controls->Add(this->add);
+	this->Controls->Add(this->listBook);
+	this->Controls->Add(this->addNewOrder);
 	this->Name = L"OrdersControl";
 	this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 	this->Text = L"OrdersControl";
@@ -327,7 +329,15 @@ void BEBS::OrdersControl::InitializeComponent(void)
 	this->PerformLayout();
 
 }
-
+System::Void BEBS::OrdersControl::addNewOrder_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	MySQL db;
+	int idB = (*lineB)[listBook->SelectedIndex.ToString()];
+	db.addNewOrder(idB, comboBox2->Text,amount_txt->Text);
+	this->~OrdersControl();
+	BEBS::OrdersControl rander;
+	rander.ShowDialog();
+}
 System::Void BEBS::OrdersControl::InventoryClick(System::Object^ sender, System::EventArgs^ e) {
 	this->~OrdersControl();
 	BEBS::AdminMenu admin;
@@ -356,7 +366,7 @@ System::Void BEBS::OrdersControl::HomePageClick(System::Object^ sender, System::
 }
 void BEBS::OrdersControl::fillBooks(void) {
 	MySQL db;
-	db.booksCom(this->comboBox1);
+	db.booksCom(this->listBook,lineB);
 	db.providerData(OrderList); 
 }
 
@@ -366,28 +376,6 @@ void BEBS::OrdersControl::fillProviders(void) {
 }
 Void BEBS::OrdersControl::fillBookChart(void) {
 	MySQL db;
-	db.booksByAmount2(this->chartBookAmount);
+	db.booksByAmount(this->chartBookAmount);
 }
 
-//idan - copy from here::::
-System::Void BEBS::OrdersControl::weekly_Click(System::Object^ sender, System::EventArgs^ e) {
-	try {
-		if (comboBox2->Text != "" && comboBox1->Text != "" && amount_txt->Text != "") {
-		    MySQL db;
-			Boolean^ isOk = db.sendOrder(this->comboBox2, this->comboBox1, this->amount_txt);
-			if (isOk) {
-				MessageBox::Show("order sended to provider");
-				this->~OrdersControl();
-				BEBS::OrdersControl or ;
-				or .ShowDialog();
-			}
-		}
-		else
-		{
-			MessageBox::Show("Plese Fill All Book detayls");
-		}
-	}
-	catch (Exception^ ex) {
-		MessageBox::Show(ex->Message);
-	}
-}

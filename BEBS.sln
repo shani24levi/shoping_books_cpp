@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BEBS", "BEBS\BEBS.vcxproj", "{2135B7E5-9702-4473-99A2-000D35C66061}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{3841A305-A377-4495-92E9-04AC91BA7A3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{2135B7E5-9702-4473-99A2-000D35C66061}.Release|x64.Build.0 = Release|x64
 		{2135B7E5-9702-4473-99A2-000D35C66061}.Release|x86.ActiveCfg = Release|Win32
 		{2135B7E5-9702-4473-99A2-000D35C66061}.Release|x86.Build.0 = Release|Win32
+		{3841A305-A377-4495-92E9-04AC91BA7A3E}.Debug|x64.ActiveCfg = Debug
+		{3841A305-A377-4495-92E9-04AC91BA7A3E}.Debug|x86.ActiveCfg = Debug
+		{3841A305-A377-4495-92E9-04AC91BA7A3E}.Release|x64.ActiveCfg = Release
+		{3841A305-A377-4495-92E9-04AC91BA7A3E}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

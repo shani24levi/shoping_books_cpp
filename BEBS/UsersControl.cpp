@@ -6,9 +6,7 @@ BEBS::UsersControl::UsersControl(void)
 {
 	InitializeComponent();
 	fillListBox();
-	//
-	//TODO: Add the constructor code here
-	//
+
 }
 BEBS::UsersControl::UsersControl(Form^ lastForm)
 {
@@ -163,7 +161,6 @@ void BEBS::UsersControl::InitializeComponent(void)
 	this->textEmail->Size = System::Drawing::Size(51, 19);
 	this->textEmail->TabIndex = 22;
 	this->textEmail->Text = L"Email";
-	this->textEmail->Click += gcnew System::EventHandler(this, &UsersControl::label1_Click);
 	// 
 	// textJoinDate
 	// 
@@ -198,7 +195,7 @@ void BEBS::UsersControl::InitializeComponent(void)
 	this->textPurchases->Font = (gcnew System::Drawing::Font(L"Arial", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 		static_cast<System::Byte>(0)));
 	this->textPurchases->ForeColor = System::Drawing::Color::White;
-	this->textPurchases->Location = System::Drawing::Point(511, 325);
+	this->textPurchases->Location = System::Drawing::Point(507, 303);
 	this->textPurchases->Name = L"textPurchases";
 	this->textPurchases->Size = System::Drawing::Size(134, 19);
 	this->textPurchases->TabIndex = 28;
@@ -209,16 +206,16 @@ void BEBS::UsersControl::InitializeComponent(void)
 	this->userPurchesTable->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 		| System::Windows::Forms::AnchorStyles::Left)
 		| System::Windows::Forms::AnchorStyles::Right));
-	this->userPurchesTable->BackgroundColor = System::Drawing::Color::Black;
+	this->userPurchesTable->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+	this->userPurchesTable->BackgroundColor = System::Drawing::Color::White;
 	this->userPurchesTable->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-	this->userPurchesTable->Location = System::Drawing::Point(511, 355);
+	this->userPurchesTable->Location = System::Drawing::Point(511, 325);
 	this->userPurchesTable->Name = L"userPurchesTable";
 	this->userPurchesTable->ReadOnly = true;
 	this->userPurchesTable->RowHeadersWidth = 72;
 	this->userPurchesTable->RowTemplate->Height = 31;
-	this->userPurchesTable->Size = System::Drawing::Size(371, 168);
+	this->userPurchesTable->Size = System::Drawing::Size(440, 198);
 	this->userPurchesTable->TabIndex = 30;
-	this->userPurchesTable->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &UsersControl::dataGridView1_CellContentClick_1);
 	// 
 	// block
 	// 
@@ -357,39 +354,24 @@ void BEBS::UsersControl::InitializeComponent(void)
 
 }
 
-System::Void BEBS::UsersControl::dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
-
-System::Void BEBS::UsersControl::label5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-System::Void BEBS::UsersControl::label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-
-	   int countList2 = 0;
-//idan - copy this::::
+	 
 System::Void BEBS::UsersControl::listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	String^ listVal = listBoxTable->Text;
 	MySQL db;
-	db.changeVals(listVal,this->textName, this->textEmail,this->textJoinDate,this->textStatus, this->userPurchesTable);
+	int idU = (*line)[listBoxTable->SelectedIndex.ToString()];
+	db.setUsersTabel(idU,textName, textEmail, textJoinDate, textStatus, userPurchesTable);
+	
 }
-//-------------------------
 
 Void BEBS::UsersControl::fillListBox(void) {
 	MySQL db;
-	db.UsersList(this->listBoxTable);
+	db.UsersList(this->listBoxTable,line);
 }
-
-System::Void BEBS::UsersControl::dataGridView1_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
-
 
 System::Void BEBS::UsersControl::block_Click(System::Object^ sender, System::EventArgs^ e) {
 	MySQL db;
 	Boolean^ isOk = db.blockUser(this->textBoxEmail);
 	if (isOk) {
-		this->Hide();
+		this->~UsersControl();
 		BEBS::UsersControl renderPage;
 		renderPage.ShowDialog();
 	}
@@ -398,7 +380,7 @@ System::Void BEBS::UsersControl::editClick(System::Object^ sender, System::Event
 	MySQL db;
 	Boolean^ isOk = db.editUser(this->textBoxlName, this->textBoxEmail, this->textBoxStatus);
 	if (isOk) {
-		this->Hide();
+		this->~UsersControl();
 		BEBS::UsersControl renderPage;
 		renderPage.ShowDialog();
 	}

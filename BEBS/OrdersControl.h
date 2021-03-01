@@ -15,9 +15,9 @@ namespace BEBS {
 		~OrdersControl();
 	private:  
 		Form^ lastForm;
-	private: System::Windows::Forms::Button^ add;
-
-		System::Windows::Forms::ComboBox^ comboBox1;
+		mapSI^ lineB = gcnew mapSI;
+		System::Windows::Forms::Button^ addNewOrder;
+		System::Windows::Forms::ComboBox^ listBook;
 		System::Windows::Forms::Label^ order_id;
 		System::Windows::Forms::Label^ label1;
 		System::Windows::Forms::TextBox^ amount_txt;
@@ -29,15 +29,11 @@ namespace BEBS {
 		System::Windows::Forms::Button^ UsersButton;
 		System::Windows::Forms::Button^ ProfitButton;
 		System::ComponentModel::Container^ components;
-
-
 		System::Windows::Forms::DataGridView^ OrderList;
 		System::Windows::Forms::Label^ OrderListLabel;
 		System::Windows::Forms::Label^ labelBookAmount;
-	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chartBookAmount;
-
-		   System::Windows::Forms::ComboBox^ comboBox2;
-		
+		System::Windows::Forms::DataVisualization::Charting::Chart^ chartBookAmount;
+		System::Windows::Forms::ComboBox^ comboBox2;
 #pragma region Windows Form Designer generated code
 	
 		void InitializeComponent(void);
@@ -51,7 +47,7 @@ namespace BEBS {
 		void fillBooks(void);
 		void fillProviders(void);
 		void fillBookChart(void);
-	private: System::Void weekly_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void addNewOrder_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }
 
