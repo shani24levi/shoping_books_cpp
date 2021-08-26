@@ -69,3 +69,4 @@ The purpose of this work is to develop a system for coordinating the sales, orde
   * user_id_discount
   * active_discount
 
+BEBS\BEBS_SHOP\Debug is install file
